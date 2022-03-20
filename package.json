@@ -1,4 +1,6 @@
 {
+  "name": "sgw-blog",
+  "author": "RyoSogawa",
   "private": true,
   "engines": {
     "node": "14.x"
