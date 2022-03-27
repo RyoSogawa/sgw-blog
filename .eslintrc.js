@@ -8,6 +8,7 @@ module.exports = {
     'prettier',
     'next',
     'next/core-web-vitals',
+    'plugin:storybook/recommended',
   ],
   plugins: ['@typescript-eslint', 'react', 'tailwindcss'],
   parser: '@typescript-eslint/parser',
@@ -43,7 +44,12 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'object-shorthand': ['error', 'properties'],
-    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-console': [
+      'error',
+      {
+        allow: ['warn', 'error'],
+      },
+    ],
     'tailwindcss/classnames-order': 'warn',
     'tailwindcss/no-custom-classname': 'off',
     'tailwindcss/no-contradicting-classname': 'error',
