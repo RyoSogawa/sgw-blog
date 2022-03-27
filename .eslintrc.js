@@ -30,7 +30,7 @@ module.exports = {
     },
     tailwindcss: {
       // These are the default values but feel free to customize
-      callees: ['clsx'],
+      callees: ['cn'],
       config: 'tailwind.config.js',
       prependCustom: false,
       removeDuplicates: true,
