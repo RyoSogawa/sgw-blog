@@ -2,7 +2,11 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx,css}', './_posts/**/*.md'],
   darkMode: 'class',
   theme: {
-    fontFamily: {},
+    fontFamily: {
+      sans: `'Noto Sans JP', sans-serif`,
+      mono: `'JetBrains Mono', monospace`,
+      inter: `'Inter', sans-serif`,
+    },
     zIndex: require('./theme/zIndex'),
     extend: {
       container: {
