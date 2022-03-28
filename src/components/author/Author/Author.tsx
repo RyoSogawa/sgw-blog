@@ -19,7 +19,7 @@ const Author: React.VFC<AuthorProps> = ({ className }) => {
       <strong className="block mt-3 font-inter font-bold text-white fsz-24ptr">
         Ryo Sogawa
       </strong>
-      <ul className="mt-3 font-inter font-extralight text-lavender fsz-12ptr">
+      <ul className="mt-3 font-inter font-extralight fsz-12ptr">
         <li>System Director</li>
         <li>Web Engineer</li>
         <li>UI Designer</li>
