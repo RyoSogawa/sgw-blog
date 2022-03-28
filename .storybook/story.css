@@ -1,17 +1,17 @@
 body {
-  background-color: #ccc;
+  background-color: #0c1821;
   background-image: repeating-linear-gradient(
       0deg,
       transparent,
       transparent 7px,
-      rgba(0, 0, 0, 0.2) 1px,
+      rgba(255, 255, 255, 0.2) 1px,
       transparent 8px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 7px,
-      rgba(0, 0, 0, 0.2) 1px,
+      rgba(255, 255, 255, 0.2) 1px,
       transparent 8px
     );
   background-size: 8px 8px;
