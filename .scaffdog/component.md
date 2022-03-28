@@ -18,14 +18,15 @@ export * from './{{ inputs.name | pascal }}'
 
 ```
 import React from 'react'
+import cn from 'classnames'
 
 export type {{ inputs.name | pascal }}Props = {
-
+  className?: string
 }
 
-const {{ inputs.name | pascal }}: React.VFC<{{ inputs.name | pascal }}Props> = ({}) => {
+const {{ inputs.name | pascal }}: React.VFC<{{ inputs.name | pascal }}Props> = ({ className }) => {
     return (
-        <div>
+        <div className={cn(className)}>
         </div>
     );
 };
