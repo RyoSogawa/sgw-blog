@@ -1,13 +1,10 @@
 import React, { useCallback, useState } from 'react'
 import Link from 'next/link'
-import cn from 'classnames'
 import { motion } from 'framer-motion'
 import { MENU } from '../../../lib/constants'
 import AuthorLinks from '../../author/AuthorLinks/AuthorLinks'
 import MobileMenu from '../MobileMenu/MobileMenu'
-
-const burgerBorderClass =
-  'absolute top-1/2 left-0 w-full h-px bg-lavender transition-transform'
+import ButtonBurger from '../ButtonBurger/ButtonBurger'
 
 const headerMenus = [
   ...MENU,
@@ -39,25 +36,7 @@ const Header: React.VFC = () => {
           </a>
         </Link>
         <div className="grow" />
-        <button
-          aria-label={isMenuOpened ? 'close menu' : 'open menu'}
-          type={'button'}
-          className="relative z-banner w-12 h-12 lg:hidden"
-          onClick={handleBurgerClick}
-        >
-          <span
-            className={cn(
-              burgerBorderClass,
-              isMenuOpened ? 'rotate-[36deg] translate-y-0' : '-translate-y-1.5'
-            )}
-          />
-          <span
-            className={cn(
-              burgerBorderClass,
-              isMenuOpened ? 'rotate-[-36deg] translate-y-0' : 'translate-y-1.5'
-            )}
-          />
-        </button>
+        <ButtonBurger isOpen={isMenuOpened} onClick={handleBurgerClick} />
         <nav className="hidden lg:flex lg:items-center">
           <ul className={'grid grid-flow-col gap-8 mr-8'}>
             {headerMenus.map(menu => (
