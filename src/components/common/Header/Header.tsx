@@ -1,8 +1,10 @@
 import React, { useCallback, useState } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
+import { motion } from 'framer-motion'
 import { MENU } from '../../../lib/constants'
 import AuthorLinks from '../../author/AuthorLinks/AuthorLinks'
+import MobileMenu from '../MobileMenu/MobileMenu'
 
 const burgerBorderClass =
   'absolute top-1/2 left-0 w-full h-px bg-lavender transition-transform'
@@ -23,10 +25,12 @@ const Header: React.VFC = () => {
   }, [])
 
   return (
-    <header
+    <motion.header
       className={
         'fixed top-0 left-0 z-sticky w-full bg-richBlack/95 backdrop-blur-[10px] backdrop-saturate-[180%]'
       }
+      initial={false}
+      animate={isMenuOpened ? 'open' : 'closed'}
     >
       <div className="container flex items-center h-[70px] lg:h-[80px]">
         <Link href={'/'}>
@@ -73,7 +77,8 @@ const Header: React.VFC = () => {
           <AuthorLinks />
         </nav>
       </div>
-    </header>
+      <MobileMenu />
+    </motion.header>
   )
 }
 
