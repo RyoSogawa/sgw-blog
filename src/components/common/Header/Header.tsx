@@ -42,11 +42,7 @@ const Header: React.VFC = () => {
             {headerMenus.map(menu => (
               <li key={menu.label}>
                 <Link href={menu.path}>
-                  <a
-                    className={
-                      'font-inter font-extralight text-white fsz-16ptr'
-                    }
-                  >
+                  <a className={'font-inter font-extralight fsz-16ptr'}>
                     {menu.label}
                   </a>
                 </Link>
