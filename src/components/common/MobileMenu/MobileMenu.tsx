@@ -53,12 +53,6 @@ const modalMenuItems: Variants = {
   },
 }
 
-export type MobileMenuProps = {
-  className?: string
-  isOpen: boolean
-  onClose: () => void
-}
-
 const MobileMenu: React.VFC = () => {
   return (
     <motion.div
