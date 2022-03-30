@@ -9,12 +9,16 @@ export type ButtonBurgerProps = {
   onClick: () => void
 }
 
-const ButtonBurger: React.VFC<ButtonBurgerProps> = ({ isOpen, onClick }) => {
+const ButtonBurger: React.ForwardRefRenderFunction<
+  HTMLButtonElement,
+  ButtonBurgerProps
+> = ({ isOpen, onClick }, ref) => {
   return (
     <button
+      ref={ref}
       aria-label={isOpen ? 'close menu' : 'open menu'}
       type={'button'}
-      className="relative z-banner w-12 h-12 lg:hidden"
+      className="relative z-banner w-12 h-12"
       onClick={onClick}
     >
       <span
@@ -33,4 +37,6 @@ const ButtonBurger: React.VFC<ButtonBurgerProps> = ({ isOpen, onClick }) => {
   )
 }
 
-export default ButtonBurger
+export default React.forwardRef<HTMLButtonElement, ButtonBurgerProps>(
+  ButtonBurger
+)
