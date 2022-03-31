@@ -18,7 +18,7 @@ const ButtonBurger: React.ForwardRefRenderFunction<
       ref={ref}
       aria-label={isOpen ? 'close menu' : 'open menu'}
       type={'button'}
-      className="relative z-banner w-12 h-12"
+      className="relative z-banner w-12 h-12 rounded-full"
       onClick={onClick}
     >
       <span
