@@ -1,31 +1,9 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { motion, Variants } from 'framer-motion'
 import { MENU } from '../../../lib/constants'
 import Link from 'next/link'
 import ButtonLink from '../../ui/ButtonLink/ButtonLink'
 import AuthorLinks from '../../author/AuthorLinks/AuthorLinks'
-
-const modal: Variants = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at calc(100% - 58px) 36px)`,
-    backgroundColor: '#000',
-    transition: {
-      type: 'spring',
-      stiffness: 20,
-      restDelta: 2,
-    },
-  }),
-  closed: {
-    clipPath: 'circle(30px at calc(100% - 58px) 36px)',
-    backgroundColor: '#0C1821',
-    transition: {
-      delay: 0.5,
-      type: 'spring',
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-}
 
 const modalMenus: Variants = {
   open: {
@@ -53,10 +31,67 @@ const modalMenuItems: Variants = {
   },
 }
 
-const MobileMenu: React.VFC = () => {
+const calcPosition = (burgerRef: React.RefObject<HTMLButtonElement>) => {
+  if (!burgerRef.current) return null
+
+  const { x, y, width, height } = burgerRef.current.getBoundingClientRect()
+  const xPos = x + width / 2
+  const yPos = y + height / 2
+  return `${xPos}px ${yPos}px`
+}
+
+export type ModalMenuProps = {
+  burgerRef: React.RefObject<HTMLButtonElement>
+}
+
+const MobileMenu: React.VFC<ModalMenuProps> = ({ burgerRef }) => {
+  const [buttonPosition, setButtonPosition] = useState('calc(100% - 58px) 36px')
+  const [shouldRender, setShouldRender] = useState(false)
+
+  const calcAndSetPosition = useCallback(() => {
+    setShouldRender(false)
+    const burgerCenter = calcPosition(burgerRef)
+    if (burgerCenter) setButtonPosition(burgerCenter)
+    setShouldRender(true)
+  }, [burgerRef])
+
+  useEffect(() => {
+    if (!burgerRef?.current) return
+
+    calcAndSetPosition()
+    addEventListener('resize', calcAndSetPosition)
+    return () => {
+      removeEventListener('resize', calcAndSetPosition)
+    }
+  }, [burgerRef, calcAndSetPosition])
+
+  const modal: Variants = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at ${buttonPosition})`,
+      transition: {
+        type: 'spring',
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+    closed: {
+      clipPath: `circle(30px at ${buttonPosition})`,
+      transition: {
+        delay: 0.5,
+        type: 'spring',
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+  }
+
+  // rerender motion component when resized
+  // because the button position is not calculated correctly
+  if (!shouldRender) return null
+
   return (
     <motion.div
-      className="absolute top-0 left-0 w-screen h-screen text-center bg-black lg:hidden"
+      className="absolute top-0 left-0 w-screen h-screen text-center bg-black"
       variants={modal}
     >
       <nav className="mt-24">
