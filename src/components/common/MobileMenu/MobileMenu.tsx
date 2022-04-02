@@ -1,9 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { motion, Variants } from 'framer-motion'
 import { MENU } from '../../../lib/constants'
 import Link from 'next/link'
 import ButtonLink from '../../ui/ButtonLink/ButtonLink'
 import AuthorLinks from '../../author/AuthorLinks/AuthorLinks'
+import useAriaHidden from '../../../lib/hooks/useAriaHidden'
 
 const modalMenus: Variants = {
   open: {
@@ -41,10 +42,13 @@ const calcPosition = (burgerRef: React.RefObject<HTMLButtonElement>) => {
 }
 
 export type ModalMenuProps = {
+  isOpen: boolean
   burgerRef: React.RefObject<HTMLButtonElement>
 }
 
-const MobileMenu: React.VFC<ModalMenuProps> = ({ burgerRef }) => {
+const MobileMenu: React.VFC<ModalMenuProps> = ({ isOpen, burgerRef }) => {
+  const modalRef = useRef<HTMLDivElement>(null)
+  useAriaHidden(modalRef, isOpen)
   const [buttonPosition, setButtonPosition] = useState('calc(100% - 58px) 36px')
   const [shouldRender, setShouldRender] = useState(false)
 
@@ -91,8 +95,13 @@ const MobileMenu: React.VFC<ModalMenuProps> = ({ burgerRef }) => {
 
   return (
     <motion.div
+      ref={modalRef}
       className="absolute top-0 left-0 w-screen h-screen text-center bg-black"
       variants={modal}
+      role="dialog"
+      aria-modal
+      aria-labelledby={'global menu'}
+      aria-hidden={!isOpen}
     >
       <nav className="mt-24">
         <motion.ul

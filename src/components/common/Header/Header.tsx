@@ -31,7 +31,7 @@ const Header: React.VFC = () => {
           onClick={handleBurgerClick}
         />
       </div>
-      <MobileMenu burgerRef={burgerRef} />
+      <MobileMenu burgerRef={burgerRef} isOpen={isMenuOpened} />
     </motion.header>
   )
 }
