@@ -13,7 +13,10 @@ const Header: React.VFC = () => {
   }, [])
 
   const handleModalClose = useCallback(() => {
-    setIsMenuOpened(false)
+    // fire event after burger clicked
+    setTimeout(() => {
+      setIsMenuOpened(false)
+    }, 300)
   }, [])
 
   return (
