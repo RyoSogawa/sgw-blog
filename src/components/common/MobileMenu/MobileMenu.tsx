@@ -5,6 +5,7 @@ import Link from 'next/link'
 import ButtonLink from '../../ui/ButtonLink/ButtonLink'
 import AuthorLinks from '../../author/AuthorLinks/AuthorLinks'
 import useAriaHidden from '../../../lib/hooks/useAriaHidden'
+import useFocusTrap from '../../../lib/hooks/useFocusTrap'
 
 const modalMenus: Variants = {
   open: {
@@ -44,11 +45,18 @@ const calcPosition = (burgerRef: React.RefObject<HTMLButtonElement>) => {
 export type ModalMenuProps = {
   isOpen: boolean
   burgerRef: React.RefObject<HTMLButtonElement>
+  onClose: () => void
 }
 
-const MobileMenu: React.VFC<ModalMenuProps> = ({ isOpen, burgerRef }) => {
-  const modalRef = useRef<HTMLDivElement>(null)
-  useAriaHidden(modalRef, isOpen)
+const MobileMenu: React.VFC<ModalMenuProps> = ({
+  isOpen,
+  burgerRef,
+  onClose,
+}) => {
+  const ref = useRef<HTMLDivElement>(null)
+  useAriaHidden(ref, isOpen)
+  useFocusTrap({ ref, isOpen, onClose })
+
   const [buttonPosition, setButtonPosition] = useState('calc(100% - 58px) 36px')
   const [shouldRender, setShouldRender] = useState(false)
 
@@ -95,7 +103,7 @@ const MobileMenu: React.VFC<ModalMenuProps> = ({ isOpen, burgerRef }) => {
 
   return (
     <motion.div
-      ref={modalRef}
+      ref={ref}
       className="absolute top-0 left-0 w-screen h-screen text-center bg-black"
       variants={modal}
       role="dialog"

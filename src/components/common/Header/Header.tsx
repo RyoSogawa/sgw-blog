@@ -12,6 +12,10 @@ const Header: React.VFC = () => {
     setIsMenuOpened(prev => !prev)
   }, [])
 
+  const handleModalClose = useCallback(() => {
+    setIsMenuOpened(false)
+  }, [])
+
   return (
     <motion.header
       className={'fixed top-0 left-0 z-sticky w-full'}
@@ -31,7 +35,11 @@ const Header: React.VFC = () => {
           onClick={handleBurgerClick}
         />
       </div>
-      <MobileMenu burgerRef={burgerRef} isOpen={isMenuOpened} />
+      <MobileMenu
+        burgerRef={burgerRef}
+        isOpen={isMenuOpened}
+        onClose={handleModalClose}
+      />
     </motion.header>
   )
 }
