@@ -10,7 +10,7 @@ questions:
 # `{{ inputs.name | pascal }}/index.ts`
 
 ```
-export * from './{{ inputs.name | pascal }}'
+export { default } from './{{ inputs.name | pascal }}'
 
 ```
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import ButtonLink from '../../ui/ButtonLink/ButtonLink'
-import Author from '../../author/Author/Author'
-import AuthorLinks from '../../author/AuthorLinks/AuthorLinks'
+import ButtonLink from '../../ui/ButtonLink'
+import Author from '../../author/Author'
+import AuthorLinks from '../../author/AuthorLinks'
 import { MENU } from '../../../lib/constants'
 
 const Footer: React.VFC = () => {

@@ -1,1 +1,1 @@
-export * from './BgGradient'
+export { default } from './BgGradient'

@@ -1,1 +1,1 @@
-export * from './ButtonBurger'
+export { default } from './ButtonBurger'

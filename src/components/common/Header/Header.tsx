@@ -1,8 +1,8 @@
 import React, { useCallback, useRef, useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import ModalMenu from '../ModalMenu/ModalMenu'
-import ButtonBurger from '../ButtonBurger/ButtonBurger'
+import ModalMenu from '../ModalMenu'
+import ButtonBurger from '../ButtonBurger'
 
 const Header: React.VFC = () => {
   const burgerRef = useRef<HTMLButtonElement>(null)

@@ -1,1 +1,1 @@
-export * from './ModalMenu'
+export { default } from './ModalMenu'
