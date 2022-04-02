@@ -6,6 +6,7 @@ module.exports = {
   charcoal: '#324A5F',
   lightGreen: '#82A3A1',
   lavender: '#CCC9DC',
+  apricot: '#FFD6C2',
   text: '#B4B2BE',
   blue: {
     50: '#e9f1ff',
