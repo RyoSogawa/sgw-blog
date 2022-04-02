@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import MobileMenu from '../MobileMenu/MobileMenu'
+import ModalMenu from '../ModalMenu/ModalMenu'
 import ButtonBurger from '../ButtonBurger/ButtonBurger'
 
 const Header: React.VFC = () => {
@@ -38,7 +38,7 @@ const Header: React.VFC = () => {
           onClick={handleBurgerClick}
         />
       </div>
-      <MobileMenu
+      <ModalMenu
         burgerRef={burgerRef}
         isOpen={isMenuOpened}
         onClose={handleModalClose}

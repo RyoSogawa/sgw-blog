@@ -49,7 +49,7 @@ export type ModalMenuProps = {
   onClose: () => void
 }
 
-const MobileMenu: React.VFC<ModalMenuProps> = ({
+const ModalMenu: React.VFC<ModalMenuProps> = ({
   isOpen,
   burgerRef,
   onClose,
@@ -141,4 +141,4 @@ const MobileMenu: React.VFC<ModalMenuProps> = ({
   )
 }
 
-export default MobileMenu
+export default ModalMenu
