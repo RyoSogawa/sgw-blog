@@ -2,7 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 
 const lineClass =
-  'absolute top-1/2 left-0 w-full h-px bg-lavender transition-transform'
+  'absolute top-1/2 left-1/2 w-10 h-px bg-lavender -translate-x-1/2 transition-transform'
 
 export type ButtonBurgerProps = {
   isOpen: boolean
