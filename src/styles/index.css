@@ -5,5 +5,22 @@
 @layer base {
   html {
     color: theme('colors.text');
+    background-color: theme('colors.richBlack');
+  }
+  p {
+    letter-spacing: 0.05em;
+    line-height: 1.75;
+  }
+}
+
+@layer components {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 48px;
+
+    @screen lg {
+      padding-top: 60px;
+      padding-bottom: 68px;
+    }
   }
 }
