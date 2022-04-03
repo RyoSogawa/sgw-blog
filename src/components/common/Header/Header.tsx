@@ -3,10 +3,12 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import ModalMenu from '../ModalMenu'
 import ButtonBurger from '../ButtonBurger'
+import useMount from '../../../lib/hooks/useMount'
 
 const Header: React.VFC = () => {
   const burgerRef = useRef<HTMLButtonElement>(null)
   const [isMenuOpened, setIsMenuOpened] = useState(false)
+  const mounted = useMount()
 
   const handleBurgerClick = useCallback(() => {
     setIsMenuOpened(prev => !prev)
@@ -25,7 +27,7 @@ const Header: React.VFC = () => {
       initial={false}
       animate={isMenuOpened ? 'open' : 'closed'}
     >
-      <div className="container flex items-center h-[70px] lg:h-[80px]">
+      <div className="container flex items-center h-[80px] lg:h-[90px]">
         <Link href={'/'}>
           <a className={'font-inter font-bold text-white fsz-28ptr'}>
             Ryo Sogawa
@@ -38,11 +40,17 @@ const Header: React.VFC = () => {
           onClick={handleBurgerClick}
         />
       </div>
-      <ModalMenu
-        burgerRef={burgerRef}
-        isOpen={isMenuOpened}
-        onClose={handleModalClose}
-      />
+      {/**
+       prevent useLayoutEffect on SSR
+       @see https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
+       */}
+      {mounted && (
+        <ModalMenu
+          burgerRef={burgerRef}
+          isOpen={isMenuOpened}
+          onClose={handleModalClose}
+        />
+      )}
     </motion.header>
   )
 }
