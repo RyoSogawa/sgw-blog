@@ -21,12 +21,8 @@ const Post = ({ post }: Props) => {
     <>
       <Head>
         <title>{post.title}</title>
-        <meta property="og:image" content={post.ogImage.url} />
       </Head>
       <div>{post.title}</div>
-      <div>{post.coverImage}</div>
-      <div>{post.date}</div>
-      <div>{post.author}</div>
       <div>{post.content}</div>
     </>
   )
