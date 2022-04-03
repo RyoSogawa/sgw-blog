@@ -44,7 +44,9 @@ export const getStaticProps = async () => {
     'publishedAt',
   ])
 
+  const recentPosts = allPosts.slice(0, 3)
+
   return {
-    props: { allPosts },
+    props: { posts: recentPosts },
   }
 }
