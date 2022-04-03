@@ -4,8 +4,8 @@ import { getAllPosts } from '../lib/api'
 import PostCard from '../components/post/PostCard'
 import Layout from '../components/common/Layout'
 import Heading from '../components/ui/Heading'
-import Author from '../components/author/Author'
 import ButtonLink from '../components/ui/ButtonLink'
+import Profile from '../components/about/Profile'
 
 type Props = {
   posts: Post[]
@@ -27,20 +27,7 @@ const PageIndex: NextPage<Props> = ({ posts }) => {
           <Heading as={'h2'} id={'about'}>
             About
           </Heading>
-          <div className="grid gap-6 mt-8 lg:grid-flow-col lg:gap-12">
-            <Author className={'shrink-0'} imageType={'photo'} />
-            <div>
-              <p>
-                香川県出身福岡県在住の 33 歳 1
-                児の父。フリーランスでエンジニアをしています。
-              </p>
-              <p className={'mt-4'}>
-                React を使ったWebフロントエンドを中心に、企画 / 要件定義 / UI
-                デザイン / システム設計 / バックエンド / インフラ /
-                ネイティブアプリ等もやっています。
-              </p>
-            </div>
-          </div>
+          <Profile />
           <div className="mt-8 text-center">
             <ButtonLink href={'/about'} theme={'secondary'}>
               More About Me
