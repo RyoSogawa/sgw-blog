@@ -6,7 +6,7 @@ import ButtonLink from '../../ui/ButtonLink'
 import AuthorLinks from '../../author/AuthorLinks'
 import useAriaHidden from '../../../lib/hooks/useAriaHidden'
 import useFocusTrap from '../../../lib/hooks/useFocusTrap'
-import useDisableScroll from '../../../lib/hooks/useDesabledScroll'
+import useDisableScroll from '../../../lib/hooks/useDisableScroll'
 
 const modalMenus: Variants = {
   open: {
