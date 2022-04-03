@@ -8,5 +8,10 @@ export default {
 
 const Template: ComponentStory<typeof Author> = props => <Author {...props} />
 
-export const DefaultStyle = Template.bind({})
-DefaultStyle.args = {}
+export const Logo = Template.bind({})
+Logo.args = {}
+
+export const Photo = Template.bind({})
+Photo.args = {
+  imageType: 'photo',
+}
