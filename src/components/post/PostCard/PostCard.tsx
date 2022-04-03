@@ -23,7 +23,7 @@ const PostCard: React.VFC<PostCardProps> = ({
       <a
         className={cn(
           className,
-          'block py-5 px-6 bg-darkBlue rounded transition-[transform,box-shadow] ease-out',
+          'block py-5 px-6 bg-darkBlue/60 rounded transition-[transform,box-shadow] ease-out',
           'hover:shadow-xl hover:-translate-y-0.5'
         )}
       >
