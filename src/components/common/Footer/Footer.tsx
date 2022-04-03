@@ -7,7 +7,7 @@ import { MENU } from '../../../lib/constants'
 
 const Footer: React.VFC = () => {
   return (
-    <footer className={'bg-black border-t border-lavender'}>
+    <footer className={'mt-10 bg-black border-t border-lavender'}>
       <div className="container flex flex-col items-center pt-9 pb-3 md:pt-12 md:pb-8">
         <nav className={'text-center'}>
           <ul className={'md:grid md:grid-flow-col md:gap-8'}>
