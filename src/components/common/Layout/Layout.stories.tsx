@@ -15,5 +15,15 @@ const Template: ComponentStory<typeof Layout> = ({ children, ...rest }) => (
 
 export const DefaultStyle = Template.bind({})
 DefaultStyle.args = {
-  children: 'content',
+  children: (
+    <div
+      style={{
+        display: 'grid',
+        placeItems: 'center',
+        height: '300px',
+      }}
+    >
+      content
+    </div>
+  ),
 }
