@@ -11,7 +11,7 @@ const TagLabel: React.VFC<TagLabelProps> = ({ className, children }) => {
     <div
       className={cn(
         className,
-        'inline-flex items-center py-0.5 px-1.5 rounded border border-white opacity-75',
+        'inline-flex items-center py-px px-1.5 rounded border border-white opacity-75',
         'font-inter text-white fsz-11ptr'
       )}
     >
