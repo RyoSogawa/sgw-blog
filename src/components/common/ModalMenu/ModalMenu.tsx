@@ -6,7 +6,6 @@ import ButtonLink from '../../ui/ButtonLink'
 import AuthorLinks from '../../author/AuthorLinks'
 import useAriaHidden from '../../../lib/hooks/useAriaHidden'
 import useFocusTrap from '../../../lib/hooks/useFocusTrap'
-import useDisableScroll from '../../../lib/hooks/useDisableScroll'
 
 const modalMenus: Variants = {
   open: {
@@ -57,7 +56,6 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({
   const ref = useRef<HTMLDivElement>(null)
   useAriaHidden(ref, isOpen)
   useFocusTrap({ ref, isOpen, onClose })
-  useDisableScroll(ref, isOpen)
 
   const [buttonPosition, setButtonPosition] = useState('calc(100% - 58px) 36px')
   const [shouldRender, setShouldRender] = useState(false)
