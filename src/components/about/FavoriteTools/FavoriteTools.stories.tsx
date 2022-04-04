@@ -4,6 +4,9 @@ import FavoriteTools from './FavoriteTools'
 export default {
   title: 'about/FavoriteTools',
   component: FavoriteTools,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as ComponentMeta<typeof FavoriteTools>
 
 const Template: ComponentStory<typeof FavoriteTools> = props => (
