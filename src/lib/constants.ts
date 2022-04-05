@@ -19,6 +19,6 @@ export const MENU = [
   },
   {
     label: 'Works',
-    path: '/works',
+    path: '/work',
   },
 ]
