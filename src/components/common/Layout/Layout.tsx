@@ -10,7 +10,7 @@ const Layout: React.VFC<LayoutProps> = ({ children }) => {
   return (
     <div className={'flex flex-col min-h-screen'}>
       <Header />
-      <div className={'grow'}>{children}</div>
+      <main className={'grow'}>{children}</main>
       <Footer />
     </div>
   )
