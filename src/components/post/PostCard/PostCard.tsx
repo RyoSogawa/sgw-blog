@@ -19,7 +19,7 @@ const PostCard: React.VFC<PostCardProps> = ({
   const { emoji, publishedAt, slug, tags, title } = post
   const formattedPublishedAt = convertToDistance(publishedAt)
   return (
-    <Link href={`/posts/${slug}`}>
+    <Link href={`/blog/${slug}`}>
       <a
         className={cn(
           className,
