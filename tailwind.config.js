@@ -17,6 +17,7 @@ module.exports = {
         },
       },
       colors: require('./theme/colors'),
+      typography: require('./theme/typography'),
     },
   },
   variants: {
