@@ -30,7 +30,7 @@ const PageBlogSingle: NextPage<Props> = ({ post }) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <div className="container pt-32 pb-20 prose">
+      <div className="container pt-32 pb-20 max-w-[732px] prose">
         <div className="grid place-items-center mx-auto w-12 h-12 leading-none bg-white rounded-full not-prose fsz-20ptr">
           {post.emoji}
         </div>
