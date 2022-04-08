@@ -44,16 +44,16 @@ const PageAbout: NextPage = () => {
         </div>
       </section>
 
-      <div className="container py-20 text-center">
-        <p>（仕事にはあまり関係のない趣味の話）</p>
-        <ButtonLink
-          href={'/about/hobbies'}
-          theme={'secondary'}
-          className={'mt-6'}
-        >
-          See My Hobbies
-        </ButtonLink>
-      </div>
+      {/*<div className="container py-20 text-center">*/}
+      {/*  <p>（仕事にはあまり関係のない趣味の話）</p>*/}
+      {/*  <ButtonLink*/}
+      {/*    href={'/about/hobbies'}*/}
+      {/*    theme={'secondary'}*/}
+      {/*    className={'mt-6'}*/}
+      {/*  >*/}
+      {/*    See My Hobbies*/}
+      {/*  </ButtonLink>*/}
+      {/*</div>*/}
     </Layout>
   )
 }
