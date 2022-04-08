@@ -25,21 +25,27 @@
   }
 
   /*toc*/
-  .prose h2[id='目次'] + ul {
-    border: 1px solid theme('colors.gray.400');
-    display: inline-block;
-    border-radius: 4px;
-    padding: 8px 28px 8px 8px;
-
-    li {
-      a {
-        color: theme('colors.gray.200');
-        font-size: 15px;
-      }
+  .prose h2[id='目次'] {
+    a {
+      display: none;
     }
 
-    > li {
-      margin-left: 28px;
+    & + ul {
+      border: 1px solid theme('colors.gray.400');
+      display: inline-block;
+      border-radius: 4px;
+      padding: 8px 28px 8px 8px;
+
+      li {
+        a {
+          color: theme('colors.gray.200');
+          font-size: 15px;
+        }
+      }
+
+      > li {
+        margin-left: 28px;
+      }
     }
   }
 }
