@@ -80,7 +80,6 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({
   const modal: Variants = {
     open: (height = 1000) => ({
       clipPath: `circle(${height * 2 + 200}px at ${buttonPosition})`,
-      backgroundColor: 'rgba(0, 0, 0, 0.8)',
       transition: {
         type: 'spring',
         stiffness: 20,
@@ -89,7 +88,6 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({
     }),
     closed: {
       clipPath: `circle(28px at ${buttonPosition})`,
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
       transition: {
         delay: 0.5,
         type: 'spring',
@@ -106,7 +104,7 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({
   return (
     <motion.div
       ref={ref}
-      className="absolute top-0 left-0 w-screen h-screen text-center backdrop-blur"
+      className="absolute top-0 left-0 w-screen h-screen text-center bg-black"
       variants={modal}
       role="dialog"
       aria-modal
