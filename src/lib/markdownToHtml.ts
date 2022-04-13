@@ -14,7 +14,7 @@ export default async function markdownToHtml(markdown: string) {
     .use(remarkParse)
     .use(slug)
     .use(remarkToc, { heading: '目次', tight: true, maxDepth: 3 })
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeAutolinkHeadings, {
       behavior: 'append',
       content: {
@@ -34,7 +34,7 @@ export default async function markdownToHtml(markdown: string) {
     })
     .use(shiki, { theme: 'hc_black' })
     .use(rehypeFormat)
-    .use(rehypeStringify)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(markdown)
   return result.toString()
 }
