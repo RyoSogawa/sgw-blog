@@ -29,7 +29,7 @@ const PostCard: React.VFC<PostCardProps> = ({
       >
         <article>
           <div className="flex items-center">
-            <div className="grid place-items-center mr-3 w-9 h-9 leading-none bg-white rounded-full fsz-13ptr">
+            <div className="grid shrink-0 place-items-center mr-3 w-9 h-9 leading-none bg-white rounded-full fsz-13ptr">
               {emoji}
             </div>
             <div className="">

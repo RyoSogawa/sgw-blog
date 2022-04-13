@@ -40,13 +40,13 @@ const PageIndex: NextPage<Props> = ({ posts }) => {
           <Heading as={'h2'} id={'posts'}>
             Posts
           </Heading>
-          <div className="grid gap-6 mt-4 lg:grid-flow-col lg:mt-8">
+          <div className="grid gap-6 mt-4 lg:grid-cols-3 lg:mt-8">
             {posts.map(post => (
               <PostCard post={post} key={post.slug} />
             ))}
           </div>
           <div className="mt-8 text-center lg:mt-12">
-            <ButtonLink href={'/posts'} theme={'secondary'}>
+            <ButtonLink href={'/blog'} theme={'secondary'}>
               See All Posts
             </ButtonLink>
           </div>
