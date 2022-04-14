@@ -6,6 +6,7 @@ import Layout from '../components/common/Layout'
 import Heading from '../components/ui/Heading'
 import ButtonLink from '../components/ui/ButtonLink'
 import Profile from '../components/about/Profile'
+import FvCopy from '../components/top/FvCopy'
 
 type Props = {
   posts: Post[]
@@ -14,14 +15,7 @@ type Props = {
 const PageIndex: NextPage<Props> = ({ posts }) => {
   return (
     <Layout>
-      <div className={'container grid place-items-center h-screen'}>
-        <blockquote className={'font-inter font-bold text-center fsz-48ptr'}>
-          “Everything in It’s Right Place”
-          <span className="block font-extralight fsz-11ptr">
-            --Radiohead 2000
-          </span>
-        </blockquote>
-      </div>
+      <FvCopy />
       <section className="section">
         <div className="container max-w-[700px]">
           <Heading as={'h2'} id={'about'}>
