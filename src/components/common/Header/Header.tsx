@@ -29,7 +29,7 @@ const Header: React.VFC = () => {
     >
       <div className="container flex items-center h-[80px] lg:h-[90px]">
         <Link href={'/'}>
-          <a className={'font-inter font-bold text-white fsz-28ptr'}>
+          <a className={'font-inter font-bold text-white fsz-20ptr'}>
             Ryo Sogawa
           </a>
         </Link>
