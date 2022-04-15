@@ -19,9 +19,7 @@ https://github.com/RyoSogawa/sgw-blog-gatsby
 
 それぞれについて簡単に解説したいと思います。
 
-```toc
-# This code block gets replaced with the TOC
-```
+## 目次
 
 ## Gatsby について
 

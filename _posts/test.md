@@ -8,9 +8,7 @@ updatedAt: '2021-12-19'
 
 この記事は投稿スタイル確認用のテスト記事です。
 
-```toc
-# This code block gets replaced with the TOC
-```
+## 目次
 
 ## 見出し
 

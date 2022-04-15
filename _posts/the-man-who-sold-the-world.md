@@ -13,10 +13,7 @@ updatedAt: '2022-01-09'
 
 第一弾のこの記事ではロック楽典との出会いから簡単にお話したいと思います。
 
-```toc
-# This code block gets replaced with the TOC
-exclude: ※ロック楽典とは
-```
+## 目次
 
 ## 僕がロック楽典と出会うまで
 
