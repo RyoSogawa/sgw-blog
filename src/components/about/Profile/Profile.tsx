@@ -15,15 +15,14 @@ const Profile: React.VFC<ProfileProps> = ({ className }) => {
       )}
     >
       <Author className={'shrink-0'} imageType={'photo'} />
-      <div>
+      <div className={'prose'}>
+        <p>香川県出身福岡県在住の 33 歳 1 児の父。</p>
         <p>
-          香川県出身福岡県在住の 33 歳 1
-          児の父。フリーランスでエンジニアをしています。
+          2014年にエンジニアとしてのキャリアを開始し、2016年からはフリーランスに転向。
         </p>
         <p className={'mt-4'}>
-          React を使ったWebフロントエンドを中心に、企画 / 要件定義 / UI デザイン
-          / システム設計 / バックエンド / インフラ /
-          ネイティブアプリ等もやっています。
+          React
+          を使ったWebフロントエンド開発を中心に、UIデザイン、企画、チームマネジメント、アジャイルマネジメント等も勢力的にやっている。
         </p>
       </div>
     </div>
