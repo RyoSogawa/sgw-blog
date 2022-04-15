@@ -24,7 +24,7 @@ const Heading: React.VFC<HeadingProps> = ({
     h6: 'fsz-24ptr',
   }
   const fontSizeClass = fontSizeClasses[size]
-  const baseClass = `text-center font-inter font-bold text-white ${fontSizeClass}`
+  const baseClass = `mix-blend-difference text-center font-inter font-bold text-white ${fontSizeClass}`
 
   const props: HTMLProps<HTMLHeadingElement> = {
     className: cn(baseClass, className),
