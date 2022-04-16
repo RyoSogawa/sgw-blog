@@ -47,8 +47,6 @@ const PageIndex: NextPage<Props> = ({ posts }) => {
             What I can do
           </Heading>
           <Heading as={'h3'} size={'h2'} className={'mt-4'}>
-            目的にフォーカスした
-            <br />
             丁寧で持続可能な
             <br />
             Webサービス開発
@@ -93,7 +91,7 @@ const PageIndex: NextPage<Props> = ({ posts }) => {
           <Heading as={'h2'} id={'posts'}>
             Posts
           </Heading>
-          <div className="grid gap-6 mt-4 lg:grid-cols-3 lg:mt-8">
+          <div className="grid gap-6 mt-4 lg:mt-8">
             {posts.map(post => (
               <PostCard post={post} key={post.slug} />
             ))}
