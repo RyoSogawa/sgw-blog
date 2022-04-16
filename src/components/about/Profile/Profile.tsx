@@ -22,7 +22,7 @@ const Profile: React.VFC<ProfileProps> = ({ className }) => {
         </p>
         <p className={'mt-4'}>
           React
-          を使ったWebフロントエンド開発を中心に、UIデザイン、企画、チームマネジメント、アジャイルマネジメント等も勢力的にやっている。
+          を使ったWebフロントエンド開発を中心に、UIデザイン、企画、チームマネジメント、アジャイルマネジメント等も力を入れてます。
         </p>
       </div>
     </div>
