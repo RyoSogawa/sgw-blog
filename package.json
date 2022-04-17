@@ -9,15 +9,15 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write \"src/**/*.(js|ts|jsx|tsx|css)\"",
+    "prettier": "prettier \"src/**/*.(js|ts|jsx|tsx|css)\"",
     "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
     "stylelint": "stylelint src",
-    "lint:fix": "yarn lint --fix",
+    "format": "yarn lint --fix && yarn styelint --fix && yarn prettier --write",
     "typecheck": "tsc",
     "prepare": "husky install",
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "scaffdog:c": "scaffdog generate component"
+    "new:c": "scaffdog generate component"
   },
   "dependencies": {
     "aria-hidden": "^1.1.3",
