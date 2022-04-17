@@ -34,7 +34,7 @@ const Author: React.VFC<AuthorProps> = ({ className, imageType = 'logo' }) => {
         Ryo Sogawa
       </strong>
       <ul className="mt-3 font-inter font-extralight fsz-12ptr">
-        <li>System Director</li>
+        <li>Application Architect</li>
         <li>Web Engineer</li>
         <li>UI Designer</li>
       </ul>
