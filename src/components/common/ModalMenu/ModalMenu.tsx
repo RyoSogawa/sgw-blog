@@ -104,7 +104,7 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({
   return (
     <motion.div
       ref={ref}
-      className="absolute top-0 left-0 w-screen h-screen text-center bg-black"
+      className="absolute top-0 left-0 w-screen h-screen text-center bg-black pointer-events-auto"
       variants={modal}
       role="dialog"
       aria-modal
