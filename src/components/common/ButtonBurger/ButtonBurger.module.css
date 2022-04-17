@@ -3,7 +3,7 @@
   z-index: theme('zIndex.banner');
   width: 56px;
   height: 56px;
-  pointer-events: all;
+  pointer-events: auto;
   border-radius: 100%;
 
   .lineBlock {

@@ -2,7 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 import s from './BgGradient.module.css'
 import useScrollPosition from '../../../lib/hooks/useScrollPosition'
-import { useRecoilState } from 'recoil'
+import { useRecoilValue } from 'recoil'
 import { hoveringLinkState } from '../../../lib/store/hoveringLinkState'
 
 export type BgGradientProps = {
@@ -11,7 +11,7 @@ export type BgGradientProps = {
 
 const BgGradient: React.VFC<BgGradientProps> = ({ bgColorClassNames }) => {
   const { y } = useScrollPosition()
-  const [hoveringLink] = useRecoilState(hoveringLinkState)
+  const hoveringLink = useRecoilValue(hoveringLinkState)
 
   return (
     <section className="overflow-hidden relative w-screen h-screen">
