@@ -1,8 +1,5 @@
 import React from 'react'
-import cn from 'classnames'
-
-const lineClass =
-  'absolute top-1/2 left-1/2 w-10 h-px bg-lavender -translate-x-1/2 transition-transform'
+import s from './ButtonBurger.module.css'
 
 export type ButtonBurgerProps = {
   isOpen: boolean
@@ -18,21 +15,13 @@ const ButtonBurger: React.ForwardRefRenderFunction<
       ref={ref}
       aria-label={isOpen ? 'close menu' : 'open menu'}
       type={'button'}
-      className="relative z-banner w-14 h-14 rounded-full border border-white"
+      data-open={isOpen}
+      className={s.button}
       onClick={onClick}
     >
-      <span
-        className={cn(
-          lineClass,
-          isOpen ? 'rotate-[36deg] translate-y-0' : '-translate-y-1.5'
-        )}
-      />
-      <span
-        className={cn(
-          lineClass,
-          isOpen ? 'rotate-[-36deg] translate-y-0' : 'translate-y-1.5'
-        )}
-      />
+      <span className={s.cross} />
+      <span className={s.cross} />
+      <span className={s.lineBlock} />
     </button>
   )
 }
