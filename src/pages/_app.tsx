@@ -1,11 +1,12 @@
 import { AppProps } from 'next/app'
 import '../styles/index.css'
 import Head from 'next/head'
+import { RecoilRoot } from 'recoil'
 import BgGradient from '../components/common/BgGradient'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <RecoilRoot>
       <Head>
         <title>Ryo Sogawa</title>
       </Head>
@@ -15,6 +16,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         />
       </div>
       <Component {...pageProps} />
-    </>
+    </RecoilRoot>
   )
 }

@@ -15,7 +15,7 @@
 .gradient {
   position: absolute;
   border-radius: 100%;
-  transition: opacity 2s, background-color 0.5s;
+  transition: opacity 1.6s, background-color 0.5s;
   animation-timing-function: cubic-bezier(0.1, 0, 0.9, 1);
   animation-iteration-count: infinite;
 
