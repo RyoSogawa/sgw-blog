@@ -11,13 +11,13 @@
     &::after {
       @apply bg-white absolute w-3 h-3 rounded-full;
 
-      content: '';
-      left: -4px;
       top: 19px;
+      left: -4px;
+      content: '';
 
       @screen md {
-        left: 96px;
         top: 23px;
+        left: 96px;
       }
     }
 

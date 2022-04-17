@@ -1,23 +1,23 @@
 .button {
-  pointer-events: all;
   position: relative;
   z-index: theme('zIndex.banner');
   width: 56px;
   height: 56px;
+  pointer-events: all;
   border-radius: 100%;
 
   .lineBlock {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 40px;
     height: 12px;
     border-top: 1px solid theme('colors.lavender');
     border-bottom: 1px solid theme('colors.lavender');
-    will-change: border-radius, width, height;
     transition: border-radius 0.2s, width 0.2s, height 0.2s;
     transition-timing-function: ease-out;
+    transform: translate(-50%, -50%);
+    will-change: border-radius, width, height;
   }
 
   .cross {
@@ -40,21 +40,21 @@
 
   &:hover {
     .lineBlock {
-      border-radius: 100%;
       width: 24px;
       height: 24px;
       border: 1px solid theme('colors.lavender');
+      border-radius: 100%;
       transition-duration: 0.1s;
     }
   }
 
   &[data-open='true'] {
     .lineBlock {
-      border-radius: 100%;
       width: 100%;
       height: 100%;
-      transition-duration: 0.3s;
       border: 1px solid theme('colors.lavender');
+      border-radius: 100%;
+      transition-duration: 0.3s;
     }
 
     .cross {

@@ -7,9 +7,10 @@
     color: theme('colors.text');
     background-color: theme('colors.richBlack');
   }
+
   p {
-    letter-spacing: 0.05em;
     line-height: 1.75;
+    letter-spacing: 0.05em;
   }
 }
 
@@ -24,22 +25,22 @@
     }
   }
 
-  /*toc*/
+  /* toc */
   .prose h2[id='目次'] {
     a {
       display: none;
     }
 
     & + ul {
-      border: 1px solid theme('colors.gray.400');
       display: inline-block;
-      border-radius: 4px;
       padding: 8px 28px 8px 8px;
+      border: 1px solid theme('colors.gray.400');
+      border-radius: 4px;
 
       li {
         a {
-          color: theme('colors.gray.200');
           font-size: 15px;
+          color: theme('colors.gray.200');
         }
       }
 
