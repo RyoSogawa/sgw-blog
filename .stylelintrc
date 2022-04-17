@@ -1,0 +1,49 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order",
+    "stylelint-config-css-modules",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-prettier"
+  ],
+  "rules": {
+    "indentation": 2,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "font-family-no-missing-generic-family-keyword": true,
+    "declaration-block-trailing-semicolon": "always",
+    "selector-class-pattern": "^[a-zA-Z][a-zA-Z0-9-_]*$",
+    "keyframes-name-pattern": "^[a-zA-Z][a-zA-Z0-9-_]*$",
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "import",
+          "extend",
+          "tailwind",
+          "layer",
+          "apply",
+          "variants",
+          "responsive",
+          "screen"
+        ]
+      }
+    ],
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "theme",
+          "screen"
+        ]
+      }
+    ],
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "prettier/prettier": true
+  }
+}
