@@ -8,7 +8,7 @@ import Interests from '../../components/about/Interests'
 import FavoriteTools from '../../components/about/FavoriteTools'
 import WorkExperience from '../../components/about/WorkExperience'
 import ImgWithCats from '../../../public/images/with-cats.jpg'
-import ButtonLink from '../../components/ui/ButtonLink'
+// import ButtonLink from '../../components/ui/ButtonLink'
 
 const PageAbout: NextPage = () => {
   return (
