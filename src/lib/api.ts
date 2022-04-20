@@ -38,7 +38,7 @@ export function getPostBySlug(
     }
   })
 
-  return items
+  return items as unknown as PostType
 }
 
 export function getAllPosts(fields: Array<keyof PostType> = []) {
