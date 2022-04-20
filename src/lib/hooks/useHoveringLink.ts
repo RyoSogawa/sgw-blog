@@ -1,9 +1,7 @@
-import { useEffect } from 'react'
-import { useRecoilState } from 'recoil'
-import { hoveringLinkState } from '../store/hoveringLinkState'
+import { useEffect, useState } from 'react'
 
 const useHoveringLink = () => {
-  const [hoveringLink, setHoveringLink] = useRecoilState(hoveringLinkState)
+  const [hoveringLink, setHoveringLink] = useState(false)
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -31,6 +29,8 @@ const useHoveringLink = () => {
       document.removeEventListener('mouseleave', handleMouseLeave)
     }
   }, [hoveringLink, setHoveringLink])
+
+  return hoveringLink
 }
 
 export default useHoveringLink
