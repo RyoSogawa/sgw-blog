@@ -17,11 +17,11 @@
 @layer components {
   .section {
     padding-top: 40px;
-    padding-bottom: 48px;
+    padding-bottom: 60px;
 
     @screen lg {
       padding-top: 60px;
-      padding-bottom: 68px;
+      padding-bottom: 80px;
     }
   }
 
