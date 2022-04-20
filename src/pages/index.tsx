@@ -7,6 +7,7 @@ import Heading from '../components/ui/Heading'
 import ButtonLink from '../components/ui/ButtonLink'
 import Profile from '../components/about/Profile'
 import FvCopy from '../components/top/FvCopy'
+import generatedRssFeed from '../lib/feed'
 
 type Props = {
   posts: Post[]
@@ -127,6 +128,8 @@ export const getStaticProps = async () => {
   ])
 
   const recentPosts = allPosts.slice(0, 3)
+
+  if (process.env.NODE_ENV !== 'development') await generatedRssFeed()
 
   return {
     props: { posts: recentPosts },
