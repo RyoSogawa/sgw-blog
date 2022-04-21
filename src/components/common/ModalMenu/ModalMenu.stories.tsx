@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import ModalMenu from './ModalMenu'
 import { useRef } from 'react'
+import ModalMenu from './ModalMenu'
 
 export default {
   title: 'common/ModalMenu',
@@ -11,7 +11,9 @@ const Template: ComponentStory<typeof ModalMenu> = props => {
   const buttonRef = useRef<HTMLButtonElement>(null)
   return (
     <div>
-      <button ref={buttonRef}>dummy</button>
+      <button ref={buttonRef} type="button">
+        dummy
+      </button>
       <ModalMenu {...props} burgerRef={buttonRef} />
     </div>
   )

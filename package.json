@@ -20,6 +20,7 @@
     "new:c": "scaffdog generate component"
   },
   "dependencies": {
+    "@storybook/react": "^6.4.22",
     "aria-hidden": "^1.1.3",
     "body-scroll-lock": "^4.0.0-beta.0",
     "classnames": "2.3.1",
@@ -51,7 +52,6 @@
     "@storybook/addon-links": "^6.4.20",
     "@storybook/builder-webpack5": "^6.4.20",
     "@storybook/manager-webpack5": "^6.4.20",
-    "@storybook/react": "^6.4.20",
     "@storybook/testing-library": "^0.0.9",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",

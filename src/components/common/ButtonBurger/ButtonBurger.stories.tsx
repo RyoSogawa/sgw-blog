@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import ButtonBurger from './ButtonBurger'
 import { useState } from 'react'
+import ButtonBurger from './ButtonBurger'
 
 export default {
   title: 'common/ButtonBurger',

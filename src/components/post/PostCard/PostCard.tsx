@@ -1,7 +1,7 @@
-import type Post from '../../../types/post'
 import React from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
+import type Post from '../../../types/post'
 import TagLabel from '../TagLabel'
 import { convertToDistance } from '../../../lib/datetime'
 
@@ -35,7 +35,7 @@ const PostCard: React.VFC<PostCardProps> = ({
             <div className="">
               <time
                 dateTime={publishedAt}
-                className={'block font-inter text-white fsz-10ptr'}
+                className="block font-inter text-white fsz-10ptr"
               >
                 {formattedPublishedAt}
               </time>

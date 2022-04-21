@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
-import type PostType from '../../types/post'
 import React from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
+import type PostType from '../../types/post'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 import Layout from '../../components/common/Layout'
@@ -34,23 +34,24 @@ const PageBlogSingle: NextPage<Props> = ({ post }) => {
         <div className="grid place-items-center mx-auto w-12 h-12 leading-none bg-white rounded-full not-prose fsz-20ptr">
           {post.emoji}
         </div>
-        <h1 className={'mt-8'}>{post.title}</h1>
+        <h1 className="mt-8">{post.title}</h1>
         <div className="flex items-center not-prose">
           {post.tags.map(tag => (
-            <TagLabel key={tag} className={'mr-3'}>
+            <TagLabel key={tag} className="mr-3">
               {tag}
             </TagLabel>
           ))}
           <div className="grow" />
           <time
             dateTime={post.publishedAt}
-            className={'block font-inter text-white fsz-12ptr'}
+            className="block font-inter text-white fsz-12ptr"
           >
             {formattedPublishedAt}
           </time>
         </div>
         <div
-          className={'mt-10'}
+          className="mt-10"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </div>
@@ -91,13 +92,11 @@ export async function getStaticPaths() {
   const posts = getAllPosts(['slug'])
 
   return {
-    paths: posts.map(post => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      }
-    }),
+    paths: posts.map(post => ({
+      params: {
+        slug: post.slug,
+      },
+    })),
     fallback: false,
   }
 }

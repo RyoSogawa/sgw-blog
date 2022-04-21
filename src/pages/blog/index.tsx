@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
+import { useCallback, useMemo, useState } from 'react'
 import type Post from '../../types/post'
 import { getAllPosts } from '../../lib/api'
 import PostCard from '../../components/post/PostCard'
 import Layout from '../../components/common/Layout'
 import Heading from '../../components/ui/Heading'
-import { useCallback, useMemo, useState } from 'react'
 import Button from '../../components/ui/Button'
 
 type Props = {
@@ -30,8 +30,8 @@ const PageBlog: NextPage<Props> = ({ posts }) => {
   return (
     <Layout>
       <section className="pt-32 pb-20">
-        <div className={'container'}>
-          <Heading as={'h1'}>Blog</Heading>
+        <div className="container">
+          <Heading as="h1">Blog</Heading>
           <div className="grid gap-6 mt-20 lg:mt-8">
             {displayingPosts.map(post => (
               <PostCard post={post} key={post.slug} />
@@ -40,7 +40,7 @@ const PageBlog: NextPage<Props> = ({ posts }) => {
         </div>
         {canLoadMore && (
           <div className="mt-10 text-center">
-            <Button theme={'secondary'} onClick={loadMore}>
+            <Button theme="secondary" onClick={loadMore}>
               Load More...
             </Button>
           </div>

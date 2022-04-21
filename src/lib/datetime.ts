@@ -18,5 +18,5 @@ export const convertToDistance = (date: string): string => {
   }
 
   // if date is after 1 month ago, return distance to now
-  return formatDistanceToNow(dateObj) + ' ago'
+  return `${formatDistanceToNow(dateObj)} ago`
 }

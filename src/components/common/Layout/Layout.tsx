@@ -11,9 +11,9 @@ const Layout: React.VFC<LayoutProps> = ({ children }) => {
   useHoveringLink()
 
   return (
-    <div className={'flex flex-col min-h-screen'}>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className={'grow'}>{children}</main>
+      <main className="grow">{children}</main>
       <Footer />
     </div>
   )

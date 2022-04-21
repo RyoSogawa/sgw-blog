@@ -23,17 +23,13 @@ const Header: React.VFC = () => {
 
   return (
     <motion.header
-      className={'fixed top-0 left-0 z-sticky w-full pointer-events-none'}
+      className="fixed top-0 left-0 z-sticky w-full pointer-events-none"
       initial={false}
       animate={isMenuOpened ? 'open' : 'closed'}
     >
       <div className="container flex items-center h-[80px] lg:h-[90px]">
-        <Link href={'/'}>
-          <a
-            className={
-              'font-inter font-bold text-white pointer-events-auto fsz-20ptr'
-            }
-          >
+        <Link href="/">
+          <a className="font-inter font-bold text-white pointer-events-auto fsz-20ptr">
             Ryo Sogawa
           </a>
         </Link>

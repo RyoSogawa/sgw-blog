@@ -36,19 +36,25 @@ const generatedRssFeed = async () => {
 
   const posts = getAllPosts(['title', 'slug', 'content', 'publishedAt'])
 
-  for (const post of posts) {
-    const url = `${baseUrl}/blog/${post.slug}`
-    const htmlContent = await markdownToHtml(post.content)
-    const desc = htmlToDesc(htmlContent)
-    feed.addItem({
-      title: post.title,
-      description: desc,
-      id: url,
-      link: url,
-      content: htmlContent,
-      date: new Date(post.publishedAt),
+  const formattedPosts = await Promise.all(
+    posts.map(async post => {
+      const url = `${baseUrl}/blog/${post.slug}`
+      const htmlContent = await markdownToHtml(post.content)
+      const desc = htmlToDesc(htmlContent)
+      return {
+        title: post.title,
+        description: desc,
+        id: url,
+        link: url,
+        content: htmlContent,
+        date: new Date(post.publishedAt),
+      }
     })
-  }
+  )
+
+  formattedPosts.forEach(post => {
+    feed.addItem(post)
+  })
 
   fs.mkdirSync('./public/rss', { recursive: true })
   fs.writeFileSync('./public/rss/feed.xml', feed.rss2())

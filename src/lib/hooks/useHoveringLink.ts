@@ -9,17 +9,17 @@ const useHoveringLink = () => {
 
       while (target?.parentElement && target.tagName !== 'HTML') {
         if (target.tagName === 'A' || target.tagName === 'BUTTON') {
-          hoveringLink || setHoveringLink(true)
+          if (!hoveringLink) setHoveringLink(true)
           return
         }
         if (target.parentElement) target = target.parentElement
       }
 
-      hoveringLink && setHoveringLink(false)
+      if (hoveringLink) setHoveringLink(false)
     }
 
     const handleMouseLeave = () => {
-      hoveringLink && setHoveringLink(false)
+      if (hoveringLink) setHoveringLink(false)
     }
 
     document.addEventListener('mousemove', handleMouseMove)

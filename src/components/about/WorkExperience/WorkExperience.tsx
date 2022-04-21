@@ -79,62 +79,54 @@ const data = [
   },
 ]
 
-const WorkExperience: React.VFC<WorkExperienceProps> = ({ className }) => {
-  return (
-    <section className={cn(className, 'section')}>
-      <div className="container">
-        <Heading as={'h2'} id={'work-experience'}>
-          Work Experience
-        </Heading>
-        <ul className={s.timeline}>
-          {data.map(d => (
-            <li key={d.year} className={s.timeline__item}>
-              <div className={s.timeline__year}>{d.year}年〜</div>
-              <div className={s.timeline__content}>
-                <div className={'p-5 bg-darkBlue/60 rounded'}>
-                  <h3
-                    className={
-                      '-mt-0.5 font-inter font-bold text-white fsz-22ptr'
-                    }
+const WorkExperience: React.VFC<WorkExperienceProps> = ({ className }) => (
+  <section className={cn(className, 'section')}>
+    <div className="container">
+      <Heading as="h2" id="work-experience">
+        Work Experience
+      </Heading>
+      <ul className={s.timeline}>
+        {data.map(d => (
+          <li key={d.year} className={s.timeline__item}>
+            <div className={s.timeline__year}>{d.year}年〜</div>
+            <div className={s.timeline__content}>
+              <div className="p-5 bg-darkBlue/60 rounded">
+                <h3 className="-mt-0.5 font-inter font-bold text-white fsz-22ptr">
+                  {d.title}
+                </h3>
+                <p className="mt-4">{d.desc}</p>
+                {d.works.map(work => (
+                  <div
+                    key={work.title}
+                    className="mt-6 border-t border-charcoal"
                   >
-                    {d.title}
-                  </h3>
-                  <p className={'mt-4'}>{d.desc}</p>
-                  {d.works.map((work, index) => (
-                    <div
-                      key={index}
-                      className={'mt-6 border-t border-charcoal'}
-                    >
-                      <h4 className={'mt-4 font-inter text-white'}>
-                        {work.title}
-                        {work.note && (
-                          <span className={'ml-2 text-text fsz-12ptr'}>
-                            ( {work.note} )
-                          </span>
-                        )}
-                      </h4>
-                      <ul className={'pl-5 list-disc'}>
-                        {work.list.map((item, index) => (
-                          <li
-                            key={index}
-                            className={
-                              'first-of-type:mt-2 mt-1 tracking-wider leading-7'
-                            }
-                          >
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+                    <h4 className="mt-4 font-inter text-white">
+                      {work.title}
+                      {work.note && (
+                        <span className="ml-2 text-text fsz-12ptr">
+                          ( {work.note} )
+                        </span>
+                      )}
+                    </h4>
+                    <ul className="pl-5 list-disc">
+                      {work.list.map(item => (
+                        <li
+                          key={item}
+                          className="first-of-type:mt-2 mt-1 tracking-wider leading-7"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  )
-}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)
 
 export default WorkExperience

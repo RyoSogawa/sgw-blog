@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { motion, Variants } from 'framer-motion'
-import { MENU } from '../../../lib/constants'
 import Link from 'next/link'
+import { MENU } from '../../../lib/constants'
 import ButtonLink from '../../ui/ButtonLink'
 import AuthorLinks from '../../author/AuthorLinks'
 import useAriaHidden from '../../../lib/hooks/useAriaHidden'
@@ -71,9 +71,9 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({
     if (!burgerRef?.current) return
 
     calcAndSetPosition()
-    addEventListener('resize', calcAndSetPosition)
+    window.addEventListener('resize', calcAndSetPosition)
     return () => {
-      removeEventListener('resize', calcAndSetPosition)
+      window.removeEventListener('resize', calcAndSetPosition)
     }
   }, [burgerRef, calcAndSetPosition])
 
@@ -108,29 +108,29 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({
       variants={modal}
       role="dialog"
       aria-modal
-      aria-labelledby={'global menu'}
+      aria-labelledby="global menu"
       aria-hidden={!isOpen}
     >
       <nav className="mt-24">
         <motion.ul
-          className={'grid grid-flow-row gap-5 justify-center'}
+          className="grid grid-flow-row gap-5 justify-center"
           variants={modalMenus}
         >
           {MENU.map(menu => (
             <motion.li key={menu.label} variants={modalMenuItems}>
               <Link href={menu.path}>
-                <a className={'font-inter font-bold text-white fsz-24ptr'}>
+                <a className="font-inter font-bold text-white fsz-24ptr">
                   {menu.label}
                 </a>
               </Link>
             </motion.li>
           ))}
-          <motion.li variants={modalMenuItems} className={'mt-6'}>
-            <ButtonLink href={'/contact'} shadow>
+          <motion.li variants={modalMenuItems} className="mt-6">
+            <ButtonLink href="/contact" shadow>
               Contact
             </ButtonLink>
           </motion.li>
-          <motion.li variants={modalMenuItems} className={'mt-6'}>
+          <motion.li variants={modalMenuItems} className="mt-6">
             <AuthorLinks />
           </motion.li>
         </motion.ul>
