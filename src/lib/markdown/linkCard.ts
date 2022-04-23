@@ -25,7 +25,7 @@ const createLinkCard = (href: string, ogpData?: OgpData | null) => {
 
   return `
     <div class="not-prose my-12">
-      <a class="block bg-darkBlue rounded overflow-hidden" 
+      <a class="block bg-darkBlue/70 rounded overflow-hidden" 
         href="${ogUrl}" target="_blanck" rel="noreferrer noopener">
         <article class="flex">
           <div class="flex flex-col justify-evenly p-3 grow sm:px-6 md:py-4">

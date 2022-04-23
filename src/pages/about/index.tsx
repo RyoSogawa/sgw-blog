@@ -12,9 +12,14 @@ import ImgWithCats from '../../../public/images/with-cats.jpg'
 
 const PageAbout: NextPage = () => (
   <Layout>
-    <section className="pt-32 pb-12">
+    <section className="py-40">
       <div className="container">
         <Heading as="h1">About</Heading>
+      </div>
+    </section>
+
+    <section className="section">
+      <div className="container">
         <Profile />
       </div>
     </section>

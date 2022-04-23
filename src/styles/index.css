@@ -32,7 +32,10 @@
     }
 
     & + ul {
+      @apply bg-darkBlue/50;
+
       display: inline-block;
+      min-width: min(350px, 100%);
       padding: 8px 28px 8px 8px;
       border: 1px solid theme('colors.gray.400');
       border-radius: 4px;
