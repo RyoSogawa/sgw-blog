@@ -12,10 +12,10 @@ const shiki = require('rehype-shiki')
 
 export default async function markdownToHtml(markdown: string) {
   const result = await unified()
-    .use(remarkParse)
+    .use(remarkParse) // markdown -> mdast
     .use(slug)
     .use(remarkToc, { heading: '目次', tight: true, maxDepth: 3 })
-    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(remarkRehype, { allowDangerousHtml: true }) // mdast -> hast
     .use(rehypeAutolinkHeadings, {
       behavior: 'append',
       content: {
@@ -35,7 +35,7 @@ export default async function markdownToHtml(markdown: string) {
     })
     .use(shiki, { theme: 'hc_black' })
     .use(rehypeFormat)
-    .use(rehypeStringify, { allowDangerousHtml: true })
+    .use(rehypeStringify, { allowDangerousHtml: true }) // hast -> html
     .process(markdown)
   return result.toString()
 }
