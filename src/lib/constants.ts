@@ -22,3 +22,5 @@ export const MENU = [
     path: '/work',
   },
 ]
+
+export const FORM_URL = 'https://forms.gle/nh8pBL5T5bXnuQ3j8'

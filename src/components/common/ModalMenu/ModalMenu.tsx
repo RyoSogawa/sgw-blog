@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { motion, Variants } from 'framer-motion'
 import Link from 'next/link'
-import { MENU } from '../../../lib/constants'
+import { FORM_URL, MENU } from '../../../lib/constants'
 import ButtonLink from '../../ui/ButtonLink'
 import AuthorLinks from '../../author/AuthorLinks'
 import useAriaHidden from '../../../lib/hooks/useAriaHidden'
@@ -126,7 +126,7 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({
             </motion.li>
           ))}
           <motion.li variants={modalMenuItems} className="mt-6">
-            <ButtonLink href="/contact" shadow>
+            <ButtonLink href={FORM_URL} shadow>
               Contact
             </ButtonLink>
           </motion.li>

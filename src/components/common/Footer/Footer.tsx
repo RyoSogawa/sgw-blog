@@ -3,7 +3,7 @@ import Link from 'next/link'
 import ButtonLink from '../../ui/ButtonLink'
 import Author from '../../author/Author'
 import AuthorLinks from '../../author/AuthorLinks'
-import { MENU } from '../../../lib/constants'
+import { FORM_URL, MENU } from '../../../lib/constants'
 
 const Footer: React.VFC = () => (
   <footer className="mt-10 bg-black border-t border-lavender">
@@ -20,7 +20,7 @@ const Footer: React.VFC = () => (
             </li>
           ))}
         </ul>
-        <ButtonLink className="mt-9 md:mt-11" href="/contact" shadow>
+        <ButtonLink className="mt-9 md:mt-11" href={FORM_URL} shadow>
           Contact
         </ButtonLink>
       </nav>
