@@ -4,7 +4,7 @@
 import fs from 'fs'
 import { Feed } from 'feed'
 import { getAllPosts } from './api'
-import markdownToHtml from './markdownToHtml'
+import markdownToHtml from './markdown/markdownToHtml'
 import { htmlToDesc } from './utils'
 
 // TODO: link
