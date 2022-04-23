@@ -9,6 +9,7 @@ import markdownToHtml from '../../lib/markdownToHtml'
 import Layout from '../../components/common/Layout'
 import TagLabel from '../../components/post/TagLabel'
 import { convertToDistance } from '../../lib/datetime'
+import convertFloatingUrlInHtmlToLinkCard from '../../lib/markdown/convertFloatingUrlInHtmlToLinkCard'
 
 type Props = {
   post: PostType
@@ -77,12 +78,13 @@ export async function getStaticProps({ params }: Params) {
     'content',
   ])
   const content = await markdownToHtml(post.content || '')
+  const finalHtml = await convertFloatingUrlInHtmlToLinkCard(content ?? '')
 
   return {
     props: {
       post: {
         ...post,
-        content,
+        content: finalHtml,
       },
     },
   }
