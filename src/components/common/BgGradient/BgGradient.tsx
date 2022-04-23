@@ -15,9 +15,10 @@ const BgGradient: React.VFC<BgGradientProps> = ({ bgColorClassNames }) => {
   return (
     <section className="overflow-hidden relative w-screen h-screen">
       <div className={s.gradientWrapper} role="region">
-        {bgColorClassNames.map(c => (
+        {bgColorClassNames.map((c, index) => (
           <div
-            key={c + new Date().getTime()}
+            // eslint-disable-next-line react/no-array-index-key
+            key={c + index}
             className={cn(s.gradient, c)}
             style={{ opacity: y < 300 || hoveringLink ? 0.8 : 0.3 }}
           />
