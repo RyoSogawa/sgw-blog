@@ -9,6 +9,7 @@ import rehypeFormat from 'rehype-format'
 import rehypeStringify from 'rehype-stringify'
 
 const shiki = require('rehype-shiki')
+const rehypeFigure = require('rehype-figure')
 
 export default async function markdownToHtml(markdown: string) {
   const result = await unified()
@@ -16,6 +17,7 @@ export default async function markdownToHtml(markdown: string) {
     .use(slug)
     .use(remarkToc, { heading: '目次', tight: true, maxDepth: 3 })
     .use(remarkRehype, { allowDangerousHtml: true }) // mdast -> hast
+    .use(rehypeFigure, { className: 'figure' })
     .use(rehypeAutolinkHeadings, {
       behavior: 'append',
       content: {

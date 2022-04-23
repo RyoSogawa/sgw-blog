@@ -19,10 +19,7 @@ updatedAt: '2022-01-09'
 
 もともと理系だった自分は、中学生のころにギターを始めたのがきっかけでコード理論にドハマリしました。
 
-![http://amzn.asia/d/8KRtvPu](/blog-assets/the-man-who-sold-the-world/gakuten.jpg)
-'いろんな曲をコピーしながら「これが...〇〇度の響き...おもしろい...」と一人でニヤニヤ。  
-活字が苦手だったのでこういう本は読めなかったです。
-'
+![いろんな曲をコピーしながら「これが...〇〇度の響き...おもしろい...」と一人でニヤニヤ。活字が苦手だったのでこういう本は読めなかったです。](/blog-assets/the-man-who-sold-the-world/gakuten.jpg)
 
 幼少期にピアノで音感を養っていたこともあり、
 CM や BGM も含めて、耳に入る音楽をほぼすべて分析しながら聞く癖がついてしまいました。  
@@ -36,8 +33,7 @@ CM や BGM も含めて、耳に入る音楽をほぼすべて分析しながら
 高校に入学してからはロックンロールと出会いました。  
 まとまったサウンドにガツンとくるメッセージ。「か、かっこいい。。」
 
-![](/blog-assets/the-man-who-sold-the-world/message-katagata.png)
- '当時のガツンとくるメッセージ代表の方々'
+![当時のガツンとくるメッセージ代表の方々](/blog-assets/the-man-who-sold-the-world/message-katagata.png)
 
 そうしてるうちに、聞きやすい音楽の中にも **聞いたことのないコード進行** があることに気が付きました。  
 それを **「尊い」** と感じたのがロック楽典との出会いです。
@@ -76,8 +72,7 @@ David Bowie といえば最近亡くなってしまったグラムロックの�
 
 ## 真髄「サビに突然現れる C#」
 
-![](/blog-assets/the-man-who-sold-the-world/score.png)
- '特筆すべきは 3 小節目の C#。どんな発想しとるんや！ってくらいキワモノです。'
+![特筆すべきは 3 小節目の C#。どんな発想しとるんや！ってくらいキワモノです。](/blog-assets/the-man-who-sold-the-world/score.png)
 
 <audio src="/blog-assets/the-man-who-sold-the-world/The_Man_Who_Sold_The_World.mp3" controls="controls"></audio>
 

@@ -49,4 +49,19 @@
       }
     }
   }
+
+  .figure {
+    text-align: center;
+
+    img {
+      margin-bottom: 0.5rem;
+    }
+
+    figcaption {
+      display: inline-block;
+      font-size: 0.875rem;
+      color: theme('colors.gray.400');
+      text-align: left;
+    }
+  }
 }

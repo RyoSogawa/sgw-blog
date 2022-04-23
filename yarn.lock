@@ -11888,6 +11888,14 @@ rehype-autolink-headings@^6.1.1:
     unified "^10.0.0"
     unist-util-visit "^4.0.0"
 
+rehype-figure@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/rehype-figure/-/rehype-figure-1.0.1.tgz#6fac89f0ec6042ce8b99163b4cc796a934267be0"
+  integrity sha512-g7DJuK8R8xHIaPI3QJ6/OoWiKepn92RF2CV3z4dO7lRO6ZHo48Tu9X3KgnZUKK035srFHqWQx93AybBy12XqmQ==
+  dependencies:
+    hastscript "^6.0.0"
+    unist-util-visit "^2.0.3"
+
 rehype-format@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/rehype-format/-/rehype-format-4.0.1.tgz#0d4ad47733699dd8e3fcd9f73d04f210246b39e1"
