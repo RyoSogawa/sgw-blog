@@ -2,7 +2,7 @@ import type { NextSeoProps } from 'next-seo'
 
 export const SITE_URL = 'https://www.example.com'
 export const SITE_NAME = 'RyoSogawa'
-export const SITE_DESC = 'default description'
+export const SITE_DESC = '福岡で活動するエンジニア、RyoSogawa のページです。'
 
 export const SEO: NextSeoProps = {
   title: undefined,
@@ -15,6 +15,7 @@ export const SEO: NextSeoProps = {
     locale: 'ja',
     url: SITE_URL,
     title: SITE_NAME,
+    description: SITE_DESC,
     site_name: SITE_NAME,
     images: [
       {
