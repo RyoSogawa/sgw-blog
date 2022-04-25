@@ -34,7 +34,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: 'detect',
+      version: '17.0.2',
     },
     tailwindcss: {
       // These are the default values but feel free to customize
@@ -51,6 +51,7 @@ module.exports = {
     'react/jsx-no-target-blank': 2,
     'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
+    'react/require-default-props': 'off',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
