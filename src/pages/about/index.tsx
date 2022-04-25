@@ -8,10 +8,12 @@ import Interests from '../../components/about/Interests'
 import FavoriteTools from '../../components/about/FavoriteTools'
 import WorkExperience from '../../components/about/WorkExperience'
 import ImgWithCats from '../../../public/images/with-cats.jpg'
+import Seo from '../../components/functional/Seo'
 // import ButtonLink from '../../components/ui/ButtonLink'
 
 const PageAbout: NextPage = () => (
   <Layout>
+    <Seo title="About" pathName="/about" />
     <section className="py-40">
       <div className="container">
         <Heading as="h1">About</Heading>

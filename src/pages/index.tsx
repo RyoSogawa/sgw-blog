@@ -8,6 +8,7 @@ import ButtonLink from '../components/ui/ButtonLink'
 import Profile from '../components/about/Profile'
 import FvCopy from '../components/top/FvCopy'
 import generatedRssFeed from '../lib/feed'
+import Seo from '../components/functional/Seo'
 
 type Props = {
   posts: Post[]
@@ -15,6 +16,7 @@ type Props = {
 
 const PageIndex: NextPage<Props> = ({ posts }) => (
   <Layout>
+    <Seo />
     <FvCopy />
     <section className="section">
       <div className="container">

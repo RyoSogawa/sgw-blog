@@ -1,15 +1,18 @@
 import type { NextPage } from 'next'
 import React from 'react'
 import { useRouter } from 'next/router'
-import Head from 'next/head'
 import ErrorPage from 'next/error'
+import { ArticleJsonLd } from 'next-seo'
 import type PostType from '../../types/post'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdown/markdownToHtml'
 import Layout from '../../components/common/Layout'
 import TagLabel from '../../components/post/TagLabel'
-import { convertToDistance } from '../../lib/datetime'
+import { convertToDistance, convertToIsoString } from '../../lib/datetime'
 import convertFloatingUrlInHtmlToLinkCard from '../../lib/markdown/convertFloatingUrlInHtmlToLinkCard'
+import { htmlToDesc } from '../../lib/utils'
+import Seo from '../../components/functional/Seo'
+import { SITE_URL } from '../../../next-seo.config'
 
 type Props = {
   post: PostType
@@ -23,14 +26,27 @@ const PageBlogSingle: NextPage<Props> = ({ post }) => {
   }
 
   const formattedPublishedAt = convertToDistance(post.publishedAt)
+  const desc = htmlToDesc(post.content)
+  const publishedAtIso = convertToIsoString(post.publishedAt)
 
   return router.isFallback ? (
     <div>Loading…</div>
   ) : (
     <Layout>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
+      <Seo
+        title={post.title}
+        description={desc}
+        pathName={`/blog/${post.slug}`}
+      />
+      <ArticleJsonLd
+        type="Blog"
+        url={`${SITE_URL}/blog/${post.slug}`}
+        title={post.title}
+        images={[`${SITE_URL}/images/ogp.png`]}
+        datePublished={publishedAtIso}
+        authorName="Ryo Sogawa"
+        description={desc}
+      />
       <div className="container pt-32 pb-20 max-w-[732px] prose">
         <div className="grid place-items-center mx-auto w-12 h-12 leading-none bg-white rounded-full not-prose fsz-20ptr">
           {post.emoji}

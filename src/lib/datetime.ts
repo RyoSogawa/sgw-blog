@@ -4,6 +4,7 @@ import {
   isBefore,
   subMonths,
   formatDistanceToNow,
+  formatISO,
 } from 'date-fns'
 
 export const convertToDistance = (date: string): string => {
@@ -19,4 +20,11 @@ export const convertToDistance = (date: string): string => {
 
   // if date is after 1 month ago, return distance to now
   return `${formatDistanceToNow(dateObj)} ago`
+}
+
+export const convertToIsoString = (date: string): string => {
+  const dateObj = new Date(date)
+  if (!isValid(dateObj)) return ''
+
+  return formatISO(dateObj)
 }

@@ -6,6 +6,7 @@ import PostCard from '../../components/post/PostCard'
 import Layout from '../../components/common/Layout'
 import Heading from '../../components/ui/Heading'
 import Button from '../../components/ui/Button'
+import Seo from '../../components/functional/Seo'
 
 type Props = {
   posts: Post[]
@@ -29,6 +30,7 @@ const PageBlog: NextPage<Props> = ({ posts }) => {
 
   return (
     <Layout>
+      <Seo title="Blog" pathName="/blog" />
       <section className="pt-32 pb-20">
         <div className="container">
           <Heading as="h1">Blog</Heading>
