@@ -23,7 +23,7 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
         <Heading as="h2" size="h6" id="my-main-focus">
           My Main Focus
         </Heading>
-        <Heading as="h3" size="h2" className="mt-4">
+        <Heading as="h3" size="h3" className="mt-4">
           心の豊かさを支える
           <br />
           サービスの提供
@@ -48,7 +48,7 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
         <Heading as="h2" size="h6" id="what-i-can-do">
           What I can do
         </Heading>
-        <Heading as="h3" size="h2" className="mt-4">
+        <Heading as="h3" size="h3" className="mt-4">
           丁寧で持続可能な
           <br />
           Webサービス開発
