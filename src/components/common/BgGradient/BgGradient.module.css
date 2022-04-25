@@ -15,6 +15,7 @@
 .gradient {
   position: absolute;
   border-radius: 100%;
+  opacity: 0.3;
   transition: opacity 1.6s, background-color 0.5s;
   animation-timing-function: cubic-bezier(0.1, 0, 0.9, 1);
   animation-iteration-count: infinite;
@@ -48,6 +49,16 @@
     height: 250px;
     animation-name: FeaturesGradient3;
     animation-duration: 11s;
+  }
+
+  &[data-on-fv='true'] {
+    opacity: 0.8;
+  }
+
+  &[data-hovering-link='true'] {
+    @screen md {
+      opacity: 0.8;
+    }
   }
 }
 

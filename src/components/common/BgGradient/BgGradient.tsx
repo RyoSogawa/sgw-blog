@@ -20,7 +20,8 @@ const BgGradient: React.VFC<BgGradientProps> = ({ bgColorClassNames }) => {
             // eslint-disable-next-line react/no-array-index-key
             key={c + index}
             className={cn(s.gradient, c)}
-            style={{ opacity: y < 300 || hoveringLink ? 0.8 : 0.3 }}
+            data-on-fv={y < 300}
+            data-hovering-link={hoveringLink}
           />
         ))}
       </div>
