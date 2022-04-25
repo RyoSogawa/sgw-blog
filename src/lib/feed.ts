@@ -6,20 +6,20 @@ import { Feed } from 'feed'
 import { getAllPosts } from './api'
 import markdownToHtml from './markdown/markdownToHtml'
 import { htmlToDesc } from './utils'
+import { SITE_URL, SITE_NAME, SITE_DESC } from '../../next-seo.config'
 
-// TODO: link
 const generatedRssFeed = async () => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ''
+  const baseUrl = SITE_URL
   const date = new Date()
   const author = {
     name: 'Ryo Sogawa',
     email: 'koashimitekara.1122@gmail.com',
-    link: 'https://...com',
+    link: SITE_URL,
   }
 
   const feed = new Feed({
-    title: process.env.NEXT_PUBLIC_BASE_NAME || '',
-    description: process.env.NEXT_PUBLIC_BASE_DISC,
+    title: SITE_NAME,
+    description: SITE_DESC,
     id: baseUrl,
     link: baseUrl,
     language: 'ja',
