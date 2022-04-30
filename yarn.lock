@@ -3540,6 +3540,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/gtag.js@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@types/gtag.js/-/gtag.js-0.0.10.tgz#ac90d9b79c00daac447725a4b78ec1c398796760"
+  integrity sha512-98Hy7woUb3jMAMXkZQwfIOYNyfxmI0+U4m0PpCGdnd/FHk0tDpQFCqgXdNkdEoXsKkcGya/2Gew1cAJjKJspVw==
+
 "@types/hast@^2.0.0", "@types/hast@^2.3.2":
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/@types/hast/-/hast-2.3.4.tgz#8aa5ef92c117d20d974a82bdfb6a648b08c0bafc"
@@ -10256,6 +10261,11 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
+
+next-gtag@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/next-gtag/-/next-gtag-0.1.1.tgz#51786c1922fb3e7bb3bb8343093ad5524c0e2aad"
+  integrity sha512-V9bg2POTosSSNtWmIVb27lHtaptJMdUd9mPN0OqKw0Fsky+wOzvyOK+19s4d8GBEHKjWjrw1FRkgRmDUGN3xpA==
 
 next-seo@^5.4.0:
   version "5.4.0"
