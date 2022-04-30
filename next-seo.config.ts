@@ -1,6 +1,6 @@
 import type { NextSeoProps } from 'next-seo'
 
-export const SITE_URL = 'https://www.example.com'
+export const SITE_URL = 'https://sgw-blog.vercel.app'
 export const SITE_NAME = 'RyoSogawa'
 export const SITE_DESC = '福岡で活動するエンジニア、RyoSogawa のページです。'
 
