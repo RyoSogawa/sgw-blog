@@ -43,7 +43,7 @@ export default ({ children }) => <PagePost meta={meta}>{children}</PagePost>
 
 ## 画像
 
-![logo](/images/logo/dinosaur_record_rectangle.svg 'dinosaur')
+![caption text](/images/ogp.png)
 
 ## テキスト装飾
 
@@ -84,3 +84,7 @@ _italic_
 | cell | cell | cell | cell                                            |
 | cell | cell | cell | cell                                            |
 | cell | cell | cell | this is long text cell. this is long text cell. |
+
+## リンクカード
+
+https://sgw-blog.vercel.app
