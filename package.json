@@ -61,8 +61,6 @@
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
     "@types/body-scroll-lock": "^3.1.0",
-    "@types/gtag.js": "^0.0.10",
-    "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
     "@types/open-graph-scraper": "^4.8.1",
     "@types/react": "^17.0.6",
