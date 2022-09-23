@@ -30,7 +30,7 @@
     "focus-trap": "^6.7.3",
     "framer-motion": "^6.2.8",
     "gray-matter": "4.0.3",
-    "next": "latest",
+    "next": "^12.3.1",
     "next-gtag": "^0.1.1",
     "next-seo": "^5.4.0",
     "open-graph-scraper": "^4.11.0",
