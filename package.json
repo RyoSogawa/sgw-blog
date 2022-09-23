@@ -12,7 +12,7 @@
     "prettier": "prettier \"src/**/*.(js|ts|jsx|tsx|css)\"",
     "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
     "stylelint": "stylelint src",
-    "format": "yarn lint --fix && yarn styelint --fix && yarn prettier --write",
+    "format": "yarn lint --fix && yarn stylelint --fix && yarn prettier --write",
     "typecheck": "tsc",
     "prepare": "husky install",
     "sb": "start-storybook -p 6006",

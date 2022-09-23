@@ -1,10 +1,24 @@
 module.exports = {
   root: true,
-  extends: ['airbnb', 'airbnb-typescript', 'next/core-web-vitals', 'prettier'],
-  plugins: ['@typescript-eslint', 'jsx-a11y', 'react', 'react-hooks', 'storybook'],
+  extends: [
+    'plugin:tailwindcss/recommended',
+    'airbnb',
+    'airbnb-typescript',
+    'next/core-web-vitals',
+    'prettier',
+  ],
+  plugins: ['@typescript-eslint', 'jsx-a11y', 'react', 'react-hooks', 'storybook', 'tailwindcss'],
   settings: {
     react: {
       version: '18',
+    },
+    tailwindcss: {
+      // These are the default values but feel free to customize
+      callees: ['cn'],
+      config: 'tailwind.config.js',
+      prependCustom: false,
+      removeDuplicates: true,
+      whitelist: [],
     },
   },
   parser: '@typescript-eslint/parser',
@@ -101,7 +115,18 @@ module.exports = {
     'consistent-return': 'off',
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'jsx-a11y/anchor-is-valid': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton'],
+      },
+    ],
+    'tailwindcss/classnames-order': 'warn',
+    'tailwindcss/no-custom-classname': 'off',
+    'tailwindcss/no-contradicting-classname': 'error',
+    '@next/next/no-img-element': 'off',
   },
   overrides: [
     {
