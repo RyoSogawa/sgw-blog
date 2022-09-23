@@ -2,18 +2,18 @@
  * @see https://silurus.dev/articles/pO0Neonv8xwbuEnZigMNf
  */
 const getDomainFromUrl = (url: string | undefined): string | undefined => {
-  if (!url) return undefined
-  let result
-  let match
-  match = url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:/\n?=]+)/im)
+  if (!url) return undefined;
+  let result;
+  let match;
+  match = url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:/\n?=]+)/im);
   if (match && match.length > 1) {
-    ;[, result] = match
-    match = result.match(/^[^.]+\.(.+\..+)$/)
+    [, result] = match;
+    match = result.match(/^[^.]+\.(.+\..+)$/);
     if (match && match.length > 1) {
-      ;[, result] = match
+      [, result] = match;
     }
   }
-  return result
-}
+  return result;
+};
 
-export default getDomainFromUrl
+export default getDomainFromUrl;

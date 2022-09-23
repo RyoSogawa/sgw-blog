@@ -1,46 +1,45 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import ButtonLink from './ButtonLink'
+import ButtonLink from './ButtonLink';
+
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
   title: 'ui/ButtonLink',
   component: ButtonLink,
   argTypes: { onClick: { action: 'onClick' } },
-} as ComponentMeta<typeof ButtonLink>
+} as ComponentMeta<typeof ButtonLink>;
 
-const Template: ComponentStory<typeof ButtonLink> = props => (
-  <ButtonLink {...props} />
-)
+const Template: ComponentStory<typeof ButtonLink> = (props) => <ButtonLink {...props} />;
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 Primary.args = {
   href: '/test',
   children: 'Button Link',
-}
+};
 
-export const PrimaryWithShadow = Template.bind({})
+export const PrimaryWithShadow = Template.bind({});
 PrimaryWithShadow.args = {
   href: '/test',
   shadow: true,
   children: 'Button Link',
-}
+};
 
-export const Secondary = Template.bind({})
+export const Secondary = Template.bind({});
 Secondary.args = {
   href: '/test',
   theme: 'secondary',
   children: 'Button Link',
-}
+};
 
-export const SecondaryWithShadow = Template.bind({})
+export const SecondaryWithShadow = Template.bind({});
 SecondaryWithShadow.args = {
   href: '/test',
   theme: 'secondary',
   shadow: true,
   children: 'Button Link',
-}
+};
 
-export const ExternalLink = Template.bind({})
+export const ExternalLink = Template.bind({});
 ExternalLink.args = {
   href: 'https://www.google.com',
   children: 'Button Link',
-}
+};

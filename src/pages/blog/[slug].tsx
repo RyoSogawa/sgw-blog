@@ -1,43 +1,42 @@
-import type { NextPage } from 'next'
-import React from 'react'
-import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
-import { ArticleJsonLd } from 'next-seo'
-import type PostType from '../../types/post'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import markdownToHtml from '../../lib/markdown/markdownToHtml'
-import Layout from '../../components/common/Layout'
-import TagLabel from '../../components/post/TagLabel'
-import { convertToDistance, convertToIsoString } from '../../lib/datetime'
-import convertFloatingUrlInHtmlToLinkCard from '../../lib/markdown/convertFloatingUrlInHtmlToLinkCard'
-import { htmlToDesc } from '../../lib/utils'
-import Seo from '../../components/functional/Seo'
-import { SITE_URL } from '../../../next-seo.config'
+import React from 'react';
+
+import { ArticleJsonLd } from 'next-seo';
+import ErrorPage from 'next/error';
+import { useRouter } from 'next/router';
+
+import { SITE_URL } from '../../../next-seo.config';
+import Layout from '../../components/common/Layout';
+import Seo from '../../components/functional/Seo';
+import TagLabel from '../../components/post/TagLabel';
+import { getPostBySlug, getAllPosts } from '../../lib/api';
+import { convertToDistance, convertToIsoString } from '../../lib/datetime';
+import convertFloatingUrlInHtmlToLinkCard from '../../lib/markdown/convertFloatingUrlInHtmlToLinkCard';
+import markdownToHtml from '../../lib/markdown/markdownToHtml';
+import { htmlToDesc } from '../../lib/utils';
+
+import type PostType from '../../types/post';
+import type { NextPage } from 'next';
 
 type Props = {
-  post: PostType
-  morePosts: PostType[]
-}
+  post: PostType;
+  morePosts: PostType[];
+};
 
 const PageBlogSingle: NextPage<Props> = ({ post }) => {
-  const router = useRouter()
+  const router = useRouter();
   if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage statusCode={404} />;
   }
 
-  const formattedPublishedAt = convertToDistance(post.publishedAt)
-  const desc = htmlToDesc(post.content)
-  const publishedAtIso = convertToIsoString(post.publishedAt)
+  const formattedPublishedAt = convertToDistance(post.publishedAt);
+  const desc = htmlToDesc(post.content);
+  const publishedAtIso = convertToIsoString(post.publishedAt);
 
   return router.isFallback ? (
     <div>Loading…</div>
   ) : (
     <Layout>
-      <Seo
-        title={post.title}
-        description={desc}
-        pathName={`/blog/${post.slug}`}
-      />
+      <Seo title={post.title} description={desc} pathName={`/blog/${post.slug}`} />
       <ArticleJsonLd
         type="Blog"
         url={`${SITE_URL}/blog/${post.slug}`}
@@ -53,16 +52,13 @@ const PageBlogSingle: NextPage<Props> = ({ post }) => {
         </div>
         <h1 className="mt-8">{post.title}</h1>
         <div className="flex items-center not-prose">
-          {post.tags.map(tag => (
+          {post.tags.map((tag) => (
             <TagLabel key={tag} className="mr-3">
               {tag}
             </TagLabel>
           ))}
           <div className="grow" />
-          <time
-            dateTime={post.publishedAt}
-            className="block font-inter text-white fsz-12ptr"
-          >
+          <time dateTime={post.publishedAt} className="block font-inter text-white fsz-12ptr">
             {formattedPublishedAt}
           </time>
         </div>
@@ -73,16 +69,16 @@ const PageBlogSingle: NextPage<Props> = ({ post }) => {
         />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default PageBlogSingle
+export default PageBlogSingle;
 
 type Params = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
@@ -92,9 +88,9 @@ export async function getStaticProps({ params }: Params) {
     'emoji',
     'publishedAt',
     'content',
-  ])
-  const content = await markdownToHtml(post.content || '')
-  const finalHtml = await convertFloatingUrlInHtmlToLinkCard(content ?? '')
+  ]);
+  const content = await markdownToHtml(post.content || '');
+  const finalHtml = await convertFloatingUrlInHtmlToLinkCard(content ?? '');
 
   return {
     props: {
@@ -103,18 +99,18 @@ export async function getStaticProps({ params }: Params) {
         content: finalHtml,
       },
     },
-  }
+  };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = getAllPosts(['slug']);
 
   return {
-    paths: posts.map(post => ({
+    paths: posts.map((post) => ({
       params: {
         slug: post.slug,
       },
     })),
     fallback: false,
-  }
+  };
 }

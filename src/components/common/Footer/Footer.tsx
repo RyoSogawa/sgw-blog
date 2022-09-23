@@ -1,21 +1,21 @@
-import React from 'react'
-import Link from 'next/link'
-import ButtonLink from '../../ui/ButtonLink'
-import Author from '../../author/Author'
-import AuthorLinks from '../../author/AuthorLinks'
-import { FORM_URL, MENU } from '../../../lib/constants'
+import React from 'react';
+
+import Link from 'next/link';
+
+import { FORM_URL, MENU } from '../../../lib/constants';
+import Author from '../../author/Author';
+import AuthorLinks from '../../author/AuthorLinks';
+import ButtonLink from '../../ui/ButtonLink';
 
 const Footer: React.VFC = () => (
   <footer className="mt-10 bg-black border-t border-lavender">
     <div className="container flex flex-col items-center pt-9 pb-3 md:pt-12 md:pb-8">
       <nav className="text-center">
         <ul className="md:grid md:grid-flow-col md:gap-8">
-          {MENU.map(menu => (
+          {MENU.map((menu) => (
             <li key={menu.label} className="mb-3 text-center">
               <Link href={menu.path}>
-                <a className="font-inter font-bold text-white fsz-24ptr">
-                  {menu.label}
-                </a>
+                <a className="font-inter font-bold text-white fsz-24ptr">{menu.label}</a>
               </Link>
             </li>
           ))}
@@ -27,9 +27,7 @@ const Footer: React.VFC = () => (
       <Author className="mt-9 md:mt-11" />
       <AuthorLinks className="mt-9 md:mt-11" />
       <div className="flex items-center mt-9 md:mt-11">
-        <span className="mr-4 font-inter font-extralight text fsz-11ptr">
-          Powered by
-        </span>
+        <span className="mr-4 font-inter font-extralight text fsz-11ptr">Powered by</span>
         <img
           className="mr-4"
           src="/images/svg/nextjs.svg"
@@ -55,11 +53,9 @@ const Footer: React.VFC = () => (
           loading="lazy"
         />
       </div>
-      <small className="mt-7 font-inter font-extralight md:mt-10 fsz-10ptr">
-        &copy; 2022
-      </small>
+      <small className="mt-7 font-inter font-extralight md:mt-10 fsz-10ptr">&copy; 2022</small>
     </div>
   </footer>
-)
+);
 
-export default Footer
+export default Footer;

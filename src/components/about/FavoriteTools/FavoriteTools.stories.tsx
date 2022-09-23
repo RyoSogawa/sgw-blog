@@ -1,5 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import FavoriteTools from './FavoriteTools'
+import FavoriteTools from './FavoriteTools';
+
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
   title: 'about/FavoriteTools',
@@ -7,11 +8,9 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof FavoriteTools>
+} as ComponentMeta<typeof FavoriteTools>;
 
-const Template: ComponentStory<typeof FavoriteTools> = props => (
-  <FavoriteTools {...props} />
-)
+const Template: ComponentStory<typeof FavoriteTools> = (props) => <FavoriteTools {...props} />;
 
-export const DefaultStyle = Template.bind({})
-DefaultStyle.args = {}
+export const DefaultStyle = Template.bind({});
+DefaultStyle.args = {};

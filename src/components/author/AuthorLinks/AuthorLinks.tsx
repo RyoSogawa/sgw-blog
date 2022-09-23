@@ -1,6 +1,8 @@
-import React from 'react'
-import cn from 'classnames'
-import { LINKS } from '../../../lib/constants'
+import React from 'react';
+
+import cn from 'classnames';
+
+import { LINKS } from '../../../lib/constants';
 
 const links = [
   {
@@ -18,15 +20,15 @@ const links = [
     href: LINKS.rss,
     src: '/images/svg/rss.svg',
   },
-]
+];
 
 export type AuthorLinksProps = {
-  className?: string
-}
+  className?: string;
+};
 
 const AuthorLinks: React.VFC<AuthorLinksProps> = ({ className }) => (
   <div className={cn(className, 'inline-grid grid-flow-col gap-5')}>
-    {links.map(link => (
+    {links.map((link) => (
       <a
         key={link.name}
         className="w-6 h-6"
@@ -45,6 +47,6 @@ const AuthorLinks: React.VFC<AuthorLinksProps> = ({ className }) => (
       </a>
     ))}
   </div>
-)
+);
 
-export default AuthorLinks
+export default AuthorLinks;

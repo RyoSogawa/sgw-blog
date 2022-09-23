@@ -68,8 +68,7 @@
   }
 
   25% {
-    transform: translateY(-50%) translateX(-50%) skew(-15deg, -15deg)
-      rotate(80deg) translateX(30%);
+    transform: translateY(-50%) translateX(-50%) skew(-15deg, -15deg) rotate(80deg) translateX(30%);
   }
 
   50% {
@@ -77,8 +76,7 @@
   }
 
   75% {
-    transform: translateY(-50%) translateX(-50%) skew(15deg, 15deg)
-      rotate(240deg) translateX(15%);
+    transform: translateY(-50%) translateX(-50%) skew(15deg, 15deg) rotate(240deg) translateX(15%);
   }
 
   to {
@@ -92,8 +90,7 @@
   }
 
   25% {
-    transform: translateY(-50%) translateX(-50%) skew(15deg, 15deg)
-      rotate(110deg) translateX(-5%);
+    transform: translateY(-50%) translateX(-50%) skew(15deg, 15deg) rotate(110deg) translateX(-5%);
   }
 
   50% {
@@ -101,8 +98,8 @@
   }
 
   75% {
-    transform: translateY(-50%) translateX(-50%) skew(-15deg, -15deg)
-      rotate(300deg) translateX(-10%);
+    transform: translateY(-50%) translateX(-50%) skew(-15deg, -15deg) rotate(300deg)
+      translateX(-10%);
   }
 
   to {
@@ -112,18 +109,15 @@
 
 @keyframes FeaturesGradient3 {
   0% {
-    transform: translateY(-50%) translateX(-50%) translateX(-15%)
-      translateY(10%);
+    transform: translateY(-50%) translateX(-50%) translateX(-15%) translateY(10%);
   }
 
   20% {
-    transform: translateY(-50%) translateX(-50%) translateX(20%)
-      translateY(-30%);
+    transform: translateY(-50%) translateX(-50%) translateX(20%) translateY(-30%);
   }
 
   40% {
-    transform: translateY(-50%) translateX(-50%) translateX(-25%)
-      translateY(-15%);
+    transform: translateY(-50%) translateX(-50%) translateX(-25%) translateY(-15%);
   }
 
   60% {
@@ -135,7 +129,6 @@
   }
 
   to {
-    transform: translateY(-50%) translateX(-50%) translateX(-15%)
-      translateY(10%);
+    transform: translateY(-50%) translateX(-50%) translateX(-15%) translateY(10%);
   }
 }

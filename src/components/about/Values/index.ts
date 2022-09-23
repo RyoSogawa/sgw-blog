@@ -1,1 +1,1 @@
-export { default } from './Values'
+export { default } from './Values';

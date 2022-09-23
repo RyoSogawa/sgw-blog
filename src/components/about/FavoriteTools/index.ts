@@ -1,1 +1,1 @@
-export { default } from './FavoriteTools'
+export { default } from './FavoriteTools';

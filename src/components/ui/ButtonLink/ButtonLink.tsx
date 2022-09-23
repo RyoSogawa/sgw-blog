@@ -1,14 +1,15 @@
-import React from 'react'
-import Link from 'next/link'
-import cn from 'classnames'
+import React from 'react';
+
+import cn from 'classnames';
+import Link from 'next/link';
 
 export type ButtonLinkProps = {
-  href: string
-  className?: string
-  theme?: 'primary' | 'secondary'
-  shadow?: boolean
-  children?: React.ReactNode
-}
+  href: string;
+  className?: string;
+  theme?: 'primary' | 'secondary';
+  shadow?: boolean;
+  children?: React.ReactNode;
+};
 
 const ButtonLink: React.VFC<ButtonLinkProps> = ({
   href,
@@ -17,7 +18,7 @@ const ButtonLink: React.VFC<ButtonLinkProps> = ({
   shadow,
   className,
 }) => {
-  const isExternal = href.startsWith('http')
+  const isExternal = href.startsWith('http');
   const classNames = cn(
     className,
     'inline-block py-2 px-6 min-w-[170px] font-inter font-medium text-center rounded border fsz-16ptr',
@@ -27,27 +28,22 @@ const ButtonLink: React.VFC<ButtonLinkProps> = ({
     theme === 'secondary' &&
       'text-black hover:text-white bg-white hover:bg-transparent border-white',
     shadow && 'shadow',
-    shadow && theme === 'primary' && 'shadow-blue-500'
-  )
+    shadow && theme === 'primary' && 'shadow-blue-500',
+  );
 
   if (isExternal) {
     return (
-      <a
-        href={href}
-        className={classNames}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={href} className={classNames} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
-    )
+    );
   }
 
   return (
     <Link href={href}>
       <a className={classNames}>{children}</a>
     </Link>
-  )
-}
+  );
+};
 
-export default ButtonLink
+export default ButtonLink;

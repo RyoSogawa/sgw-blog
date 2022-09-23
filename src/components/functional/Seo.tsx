@@ -1,13 +1,17 @@
-import React from 'react'
-import { NextSeo, NextSeoProps } from 'next-seo'
-import { SITE_URL } from '../../../next-seo.config'
+import React from 'react';
+
+import { NextSeo } from 'next-seo';
+
+import { SITE_URL } from '../../../next-seo.config';
+
+import type { NextSeoProps } from 'next-seo';
 
 export type SeoProps = Omit<NextSeoProps, 'canonical'> & {
-  pathName?: string
-}
+  pathName?: string;
+};
 
 const Seo = ({ pathName = '', ...props }: SeoProps): JSX.Element => {
-  const url = SITE_URL + pathName
+  const url = SITE_URL + pathName;
 
   return (
     <NextSeo
@@ -19,7 +23,7 @@ const Seo = ({ pathName = '', ...props }: SeoProps): JSX.Element => {
         ...props.openGraph,
       }}
     />
-  )
-}
+  );
+};
 
-export default Seo
+export default Seo;

@@ -1,5 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Layout from './Layout'
+import Layout from './Layout';
+
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
   title: 'common/Layout',
@@ -7,13 +8,13 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof Layout>
+} as ComponentMeta<typeof Layout>;
 
 const Template: ComponentStory<typeof Layout> = ({ children, ...rest }) => (
   <Layout {...rest}>{children}</Layout>
-)
+);
 
-export const DefaultStyle = Template.bind({})
+export const DefaultStyle = Template.bind({});
 DefaultStyle.args = {
   children: (
     <div
@@ -26,4 +27,4 @@ DefaultStyle.args = {
       content
     </div>
   ),
-}
+};

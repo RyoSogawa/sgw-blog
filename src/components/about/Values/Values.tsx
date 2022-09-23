@@ -1,10 +1,12 @@
-import React from 'react'
-import cn from 'classnames'
-import Heading from '../../ui/Heading'
+import React from 'react';
+
+import cn from 'classnames';
+
+import Heading from '../../ui/Heading';
 
 export type ValuesProps = {
-  className?: string
-}
+  className?: string;
+};
 
 const Values: React.VFC<ValuesProps> = ({ className }) => (
   <section className={cn(className, 'section')}>
@@ -20,9 +22,7 @@ const Values: React.VFC<ValuesProps> = ({ className }) => (
             幸せにする
           </Heading>
           <div className="mt-7">
-            <p>
-              幸福の総量が多くなること、誰かを犠牲にしないことを重視しています。
-            </p>
+            <p>幸福の総量が多くなること、誰かを犠牲にしないことを重視しています。</p>
             <p>
               そしてなるべく、自分自身→パートナー→親族→友人→仕事のチーム→取引先...
               といったように身近な人から順番に大事にしたいと思っています。
@@ -53,9 +53,7 @@ const Values: React.VFC<ValuesProps> = ({ className }) => (
             合理的であれ
           </Heading>
           <div className="mt-7">
-            <p>
-              理にかなった判断を大事にし、Win-Winの関係を作ることにフォーカスしています。
-            </p>
+            <p>理にかなった判断を大事にし、Win-Winの関係を作ることにフォーカスしています。</p>
             <p className="mt-4">
               そのためにも、
               <ul className="pl-5 mt-4 leading-8 list-disc">
@@ -70,6 +68,6 @@ const Values: React.VFC<ValuesProps> = ({ className }) => (
       </ul>
     </div>
   </section>
-)
+);
 
-export default Values
+export default Values;

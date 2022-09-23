@@ -1,18 +1,19 @@
-import type { NextPage } from 'next'
-import type Post from '../types/post'
-import { getAllPosts } from '../lib/api'
-import PostCard from '../components/post/PostCard'
-import Layout from '../components/common/Layout'
-import Heading from '../components/ui/Heading'
-import ButtonLink from '../components/ui/ButtonLink'
-import Profile from '../components/about/Profile'
-import FvCopy from '../components/top/FvCopy'
-import generatedRssFeed from '../lib/feed'
-import Seo from '../components/functional/Seo'
+import Profile from '../components/about/Profile';
+import Layout from '../components/common/Layout';
+import Seo from '../components/functional/Seo';
+import PostCard from '../components/post/PostCard';
+import FvCopy from '../components/top/FvCopy';
+import ButtonLink from '../components/ui/ButtonLink';
+import Heading from '../components/ui/Heading';
+import { getAllPosts } from '../lib/api';
+import generatedRssFeed from '../lib/feed';
+
+import type Post from '../types/post';
+import type { NextPage } from 'next';
 
 type Props = {
-  posts: Post[]
-}
+  posts: Post[];
+};
 
 const PageIndex: NextPage<Props> = ({ posts }) => (
   <Layout>
@@ -31,9 +32,7 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
         <div className="mt-8 text-center prose">
           <div className="inline-block text-left">
             <p>人の心をより豊かにするサービスを作りたいと思っています。</p>
-            <p>
-              ポジティブな感情を増やし、幸せの総量に貢献できるようなサービス、例えば、
-            </p>
+            <p>ポジティブな感情を増やし、幸せの総量に貢献できるようなサービス、例えば、</p>
             <ul className="text-white">
               <li>時間を奪うのではなく生み出す</li>
               <li>依存させるのではなく自由にする</li>
@@ -68,9 +67,7 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
               <li>リサーチ、改善</li>
             </ul>
             まで一気通貫で担当します。
-            <p>
-              お困りごとがあったり、サービスを作りたいという方は、ぜひご相談ください。
-            </p>
+            <p>お困りごとがあったり、サービスを作りたいという方は、ぜひご相談ください。</p>
           </div>
         </div>
       </div>
@@ -94,8 +91,8 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
           Posts
         </Heading>
         <div className="grid gap-6 mt-4 lg:mt-8">
-          {posts.map(post => (
-            <PostCard post={post} key={post.slug} />
+          {posts.map((post) => (
+            <PostCard key={post.slug} post={post} />
           ))}
         </div>
         <div className="mt-8 text-center lg:mt-12">
@@ -114,24 +111,18 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
       </div>
     </section>
   </Layout>
-)
+);
 
-export default PageIndex
+export default PageIndex;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'slug',
-    'tags',
-    'emoji',
-    'publishedAt',
-  ])
+  const allPosts = getAllPosts(['title', 'slug', 'tags', 'emoji', 'publishedAt']);
 
-  const recentPosts = allPosts.slice(0, 3)
+  const recentPosts = allPosts.slice(0, 3);
 
-  if (process.env.NODE_ENV !== 'development') await generatedRssFeed()
+  if (process.env.NODE_ENV !== 'development') await generatedRssFeed();
 
   return {
     props: { posts: recentPosts },
-  }
-}
+  };
+};

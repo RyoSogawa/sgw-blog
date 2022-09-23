@@ -1,10 +1,12 @@
-import React from 'react'
-import cn from 'classnames'
-import Heading from '../../ui/Heading'
+import React from 'react';
+
+import cn from 'classnames';
+
+import Heading from '../../ui/Heading';
 
 export type FavoriteToolsProps = {
-  className?: string
-}
+  className?: string;
+};
 
 const data = [
   {
@@ -45,7 +47,7 @@ const data = [
     name: 'Slack',
     imgFileName: 'slack.svg',
   },
-]
+];
 
 const FavoriteTools: React.VFC<FavoriteToolsProps> = ({ className }) => (
   <section className={cn(className, 'section')}>
@@ -54,7 +56,7 @@ const FavoriteTools: React.VFC<FavoriteToolsProps> = ({ className }) => (
         Favorite Tools
       </Heading>
       <ul className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-x-2 gap-y-8 mx-auto mt-10 max-w-[710px]">
-        {data.map(d => (
+        {data.map((d) => (
           <li key={d.name} className="text-center">
             <img
               src={`/images/favorite/${d.imgFileName}`}
@@ -70,6 +72,6 @@ const FavoriteTools: React.VFC<FavoriteToolsProps> = ({ className }) => (
       </ul>
     </div>
   </section>
-)
+);
 
-export default FavoriteTools
+export default FavoriteTools;

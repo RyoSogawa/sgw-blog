@@ -1,1 +1,1 @@
-export { default } from './FvCopy'
+export { default } from './FvCopy';

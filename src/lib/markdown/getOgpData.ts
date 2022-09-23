@@ -1,39 +1,38 @@
 /**
  * @see https://silurus.dev/articles/pO0Neonv8xwbuEnZigMNf
  */
-import openGraphScraper, {
-  OpenGraphImage,
-  OpenGraphProperties,
-} from 'open-graph-scraper'
+import openGraphScraper from 'open-graph-scraper';
+
+import type { OpenGraphImage, OpenGraphProperties } from 'open-graph-scraper';
 
 export type OgpData = OpenGraphProperties & {
-  ogImage?: OpenGraphImage | OpenGraphImage[] | undefined
-}
+  ogImage?: OpenGraphImage | OpenGraphImage[] | undefined;
+};
 
 const getOgpData = async (floatingUrls: string[]): Promise<OgpData[]> => {
-  const ogpDatas: OgpData[] = []
-  if (floatingUrls.length === 0) return ogpDatas
+  const ogpDatas: OgpData[] = [];
+  if (floatingUrls.length === 0) return ogpDatas;
 
   await Promise.all(
-    floatingUrls.map(async url => {
-      const options = { url, onlyGetOpenGraphInfo: true }
+    floatingUrls.map(async (url) => {
+      const options = { url, onlyGetOpenGraphInfo: true };
       return openGraphScraper(options)
-        .then(data => {
+        .then((data) => {
           // OGP によるデータ取得が失敗した場合
           if (!data.result.success) {
-            return
+            return;
           }
           // OGP によるデータ取得が成功した場合
-          ogpDatas.push(data.result)
+          ogpDatas.push(data.result);
         })
-        .catch(error => {
+        .catch((error) => {
           // error を throw するとビルドできないため、コンソールに出力して return する
-          console.error(error)
-        })
-    })
-  )
+          console.error(error);
+        });
+    }),
+  );
 
-  return ogpDatas
-}
+  return ogpDatas;
+};
 
-export default getOgpData
+export default getOgpData;

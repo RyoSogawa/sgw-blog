@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import remarkToc from 'remark-toc'
-import slug from 'remark-slug'
-import remarkRehype from 'remark-rehype'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeFormat from 'rehype-format'
-import rehypeStringify from 'rehype-stringify'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeFormat from 'rehype-format';
+import rehypeStringify from 'rehype-stringify';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import slug from 'remark-slug';
+import remarkToc from 'remark-toc';
+import { unified } from 'unified';
 
-const shiki = require('rehype-shiki')
-const rehypeFigure = require('rehype-figure')
+const rehypeFigure = require('rehype-figure');
+const shiki = require('rehype-shiki');
 
 export default async function markdownToHtml(markdown: string) {
   const result = await unified()
@@ -24,8 +24,7 @@ export default async function markdownToHtml(markdown: string) {
         type: 'element',
         tagName: 'span',
         properties: {
-          className:
-            'ml-2 opacity-50 font-inter transition-opacity hover:opacity-80',
+          className: 'ml-2 opacity-50 font-inter transition-opacity hover:opacity-80',
         },
         children: [
           {
@@ -38,6 +37,6 @@ export default async function markdownToHtml(markdown: string) {
     .use(shiki, { theme: 'hc_black' })
     .use(rehypeFormat)
     .use(rehypeStringify, { allowDangerousHtml: true }) // hast -> html
-    .process(markdown)
-  return result.toString()
+    .process(markdown);
+  return result.toString();
 }

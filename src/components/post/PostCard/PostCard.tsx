@@ -1,30 +1,29 @@
-import React from 'react'
-import Link from 'next/link'
-import cn from 'classnames'
-import type Post from '../../../types/post'
-import TagLabel from '../TagLabel'
-import { convertToDistance } from '../../../lib/datetime'
+import React from 'react';
+
+import cn from 'classnames';
+import Link from 'next/link';
+
+import { convertToDistance } from '../../../lib/datetime';
+import TagLabel from '../TagLabel';
+
+import type Post from '../../../types/post';
 
 export type PostCardProps = {
-  className?: string
-  post: Omit<Post, 'content'>
-  headingTag?: 'h2' | 'h3'
-}
+  className?: string;
+  post: Omit<Post, 'content'>;
+  headingTag?: 'h2' | 'h3';
+};
 
-const PostCard: React.VFC<PostCardProps> = ({
-  className,
-  post,
-  headingTag = 'h2',
-}) => {
-  const { emoji, publishedAt, slug, tags, title } = post
-  const formattedPublishedAt = convertToDistance(publishedAt)
+const PostCard: React.VFC<PostCardProps> = ({ className, post, headingTag = 'h2' }) => {
+  const { emoji, publishedAt, slug, tags, title } = post;
+  const formattedPublishedAt = convertToDistance(publishedAt);
   return (
     <Link href={`/blog/${slug}`}>
       <a
         className={cn(
           className,
           'block py-5 px-6 bg-darkBlue/60 rounded transition-[transform,box-shadow] ease-out',
-          'hover:shadow-xl hover:-translate-y-0.5'
+          'hover:shadow-xl hover:-translate-y-0.5',
         )}
       >
         <article>
@@ -33,14 +32,11 @@ const PostCard: React.VFC<PostCardProps> = ({
               {emoji}
             </div>
             <div className="">
-              <time
-                dateTime={publishedAt}
-                className="block font-inter text-white fsz-10ptr"
-              >
+              <time dateTime={publishedAt} className="block font-inter text-white fsz-10ptr">
                 {formattedPublishedAt}
               </time>
               <div className="grid grid-flow-col gap-2 mt-1">
-                {tags.map(tag => (
+                {tags.map((tag) => (
                   <TagLabel key={tag}>{tag}</TagLabel>
                 ))}
               </div>
@@ -54,7 +50,7 @@ const PostCard: React.VFC<PostCardProps> = ({
         </article>
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default PostCard
+export default PostCard;

@@ -1,16 +1,18 @@
-import React from 'react'
-import cn from 'classnames'
-import s from './BgGradient.module.css'
-import useScrollPosition from '../../../lib/hooks/useScrollPosition'
-import useHoveringLink from '../../../lib/hooks/useHoveringLink'
+import React from 'react';
+
+import cn from 'classnames';
+
+import useHoveringLink from '../../../lib/hooks/useHoveringLink';
+import useScrollPosition from '../../../lib/hooks/useScrollPosition';
+import s from './BgGradient.module.css';
 
 export type BgGradientProps = {
-  bgColorClassNames: string[]
-}
+  bgColorClassNames: string[];
+};
 
 const BgGradient: React.VFC<BgGradientProps> = ({ bgColorClassNames }) => {
-  const { y } = useScrollPosition()
-  const hoveringLink = useHoveringLink()
+  const { y } = useScrollPosition();
+  const hoveringLink = useHoveringLink();
 
   return (
     <section className="overflow-hidden relative w-screen h-screen">
@@ -26,7 +28,7 @@ const BgGradient: React.VFC<BgGradientProps> = ({ bgColorClassNames }) => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BgGradient
+export default BgGradient;

@@ -1,18 +1,18 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { format, subDays } from 'date-fns'
-import PostCard from './PostCard'
+import { format, subDays } from 'date-fns';
+
+import PostCard from './PostCard';
+
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
   title: 'post/PostCard',
   component: PostCard,
   argTypes: { onClick: { action: 'onClick' } },
-} as ComponentMeta<typeof PostCard>
+} as ComponentMeta<typeof PostCard>;
 
-const Template: ComponentStory<typeof PostCard> = props => (
-  <PostCard {...props} />
-)
+const Template: ComponentStory<typeof PostCard> = (props) => <PostCard {...props} />;
 
-export const DefaultStyle = Template.bind({})
+export const DefaultStyle = Template.bind({});
 DefaultStyle.args = {
   post: {
     title: 'ブログをNext.jsからGatsbyに移行した記録',
@@ -21,9 +21,9 @@ DefaultStyle.args = {
     tags: ['Next.js', 'Gatsby'],
     publishedAt: '2022-01-01',
   },
-}
+};
 
-export const RecentPost = Template.bind({})
+export const RecentPost = Template.bind({});
 RecentPost.args = {
   post: {
     title: 'ブログをNext.jsからGatsbyに移行した記録',
@@ -32,4 +32,4 @@ RecentPost.args = {
     tags: ['Next.js', 'Gatsby'],
     publishedAt: format(subDays(new Date(), 3), 'yyyy-MM-dd'),
   },
-}
+};

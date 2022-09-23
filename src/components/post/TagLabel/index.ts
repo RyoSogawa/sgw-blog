@@ -1,1 +1,1 @@
-export { default } from './TagLabel'
+export { default } from './TagLabel';

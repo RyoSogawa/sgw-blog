@@ -1,12 +1,13 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import FvCopy from './FvCopy'
+import FvCopy from './FvCopy';
+
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
   title: 'top/FvCopy',
   component: FvCopy,
-} as ComponentMeta<typeof FvCopy>
+} as ComponentMeta<typeof FvCopy>;
 
-const Template: ComponentStory<typeof FvCopy> = props => <FvCopy {...props} />
+const Template: ComponentStory<typeof FvCopy> = (props) => <FvCopy {...props} />;
 
-export const DefaultStyle = Template.bind({})
-DefaultStyle.args = {}
+export const DefaultStyle = Template.bind({});
+DefaultStyle.args = {};

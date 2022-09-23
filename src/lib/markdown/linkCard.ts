@@ -1,27 +1,27 @@
-import { sanitizeUrl } from '@braintree/sanitize-url'
-import getDomainFromUrl from './getDomainFromUrl'
-import type { OgpData } from './getOgpData'
+import { sanitizeUrl } from '@braintree/sanitize-url';
+
+import getDomainFromUrl from './getDomainFromUrl';
+
+import type { OgpData } from './getOgpData';
 
 const createLinkCard = (href: string, ogpData?: OgpData | null) => {
-  const sanitizedUrl = sanitizeUrl(href ?? undefined)
+  const sanitizedUrl = sanitizeUrl(href ?? undefined);
 
   if (!ogpData || !ogpData.ogUrl) {
     return `
-      <a href="${sanitizedUrl}" target="_blanck" rel="noreferrer noopener">${href}</a>`
+      <a href="${sanitizedUrl}" target="_blanck" rel="noreferrer noopener">${href}</a>`;
   }
 
-  const { ogImage, ogUrl, ogTitle, ogDescription } = ogpData
-  const image = Array.isArray(ogImage) ? ogImage[0] : ogImage
-  const imageWidth = image?.width ?? 1200
-  const imageHeight = image?.height ?? 630
+  const { ogImage, ogUrl, ogTitle, ogDescription } = ogpData;
+  const image = Array.isArray(ogImage) ? ogImage[0] : ogImage;
+  const imageWidth = image?.width ?? 1200;
+  const imageHeight = image?.height ?? 630;
 
   const showsDesc =
-    !!ogDescription &&
-    ogDescription.length > 0 &&
-    ogDescription.trim() !== 'undefined'
+    !!ogDescription && ogDescription.length > 0 && ogDescription.trim() !== 'undefined';
 
-  const domain = getDomainFromUrl(ogUrl)
-  const faviconSrc = `https://www.google.com/s2/u/0/favicons?domain=${domain}`
+  const domain = getDomainFromUrl(ogUrl);
+  const faviconSrc = `https://www.google.com/s2/u/0/favicons?domain=${domain}`;
 
   return `
     <div class="not-prose my-12">
@@ -47,7 +47,7 @@ const createLinkCard = (href: string, ogpData?: OgpData | null) => {
           </div>
         </article>
       </a>
-    </div>`
-}
+    </div>`;
+};
 
-export default createLinkCard
+export default createLinkCard;

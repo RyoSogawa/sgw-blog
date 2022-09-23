@@ -1,10 +1,11 @@
-import React from 'react'
-import cn from 'classnames'
+import React from 'react';
+
+import cn from 'classnames';
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  theme?: 'primary' | 'secondary'
-  shadow?: boolean
-}
+  theme?: 'primary' | 'secondary';
+  shadow?: boolean;
+};
 
 const Button: React.VFC<ButtonProps> = ({
   className,
@@ -25,11 +26,11 @@ const Button: React.VFC<ButtonProps> = ({
       theme === 'secondary' &&
         'text-black hover:text-white bg-white hover:bg-transparent border-white',
       shadow && 'shadow',
-      shadow && theme === 'primary' && 'shadow-blue-500'
+      shadow && theme === 'primary' && 'shadow-blue-500',
     )}
   >
     {children}
   </button>
-)
+);
 
-export default Button
+export default Button;

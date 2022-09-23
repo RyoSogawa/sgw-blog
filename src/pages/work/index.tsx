@@ -1,6 +1,7 @@
-import type { NextPage } from 'next'
-import Layout from '../../components/common/Layout'
-import Heading from '../../components/ui/Heading'
+import Layout from '../../components/common/Layout';
+import Heading from '../../components/ui/Heading';
+
+import type { NextPage } from 'next';
 
 const PageWorks: NextPage = () => (
   <Layout>
@@ -9,6 +10,6 @@ const PageWorks: NextPage = () => (
       <p className="mt-8 text-center">Now Developing...🛠</p>
     </div>
   </Layout>
-)
+);
 
-export default PageWorks
+export default PageWorks;

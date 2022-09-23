@@ -1,21 +1,23 @@
 /**
  * @see https://fwywd.com/tech/next-feed-rss-atom
  */
-import fs from 'fs'
-import { Feed } from 'feed'
-import { getAllPosts } from './api'
-import markdownToHtml from './markdown/markdownToHtml'
-import { htmlToDesc } from './utils'
-import { SITE_URL, SITE_NAME, SITE_DESC } from '../../next-seo.config'
+import fs from 'fs';
+
+import { Feed } from 'feed';
+
+import { SITE_URL, SITE_NAME, SITE_DESC } from '../../next-seo.config';
+import { getAllPosts } from './api';
+import markdownToHtml from './markdown/markdownToHtml';
+import { htmlToDesc } from './utils';
 
 const generatedRssFeed = async () => {
-  const baseUrl = SITE_URL
-  const date = new Date()
+  const baseUrl = SITE_URL;
+  const date = new Date();
   const author = {
     name: 'Ryo Sogawa',
     email: 'koashimitekara.1122@gmail.com',
     link: SITE_URL,
-  }
+  };
 
   const feed = new Feed({
     title: SITE_NAME,
@@ -32,15 +34,15 @@ const generatedRssFeed = async () => {
       // atom: `${baseUrl}/rss/atom.xml`,
     },
     author,
-  })
+  });
 
-  const posts = getAllPosts(['title', 'slug', 'content', 'publishedAt'])
+  const posts = getAllPosts(['title', 'slug', 'content', 'publishedAt']);
 
   const formattedPosts = await Promise.all(
-    posts.map(async post => {
-      const url = `${baseUrl}/blog/${post.slug}`
-      const htmlContent = await markdownToHtml(post.content)
-      const desc = htmlToDesc(htmlContent)
+    posts.map(async (post) => {
+      const url = `${baseUrl}/blog/${post.slug}`;
+      const htmlContent = await markdownToHtml(post.content);
+      const desc = htmlToDesc(htmlContent);
       return {
         title: post.title,
         description: desc,
@@ -48,18 +50,18 @@ const generatedRssFeed = async () => {
         link: url,
         content: htmlContent,
         date: new Date(post.publishedAt),
-      }
-    })
-  )
+      };
+    }),
+  );
 
-  formattedPosts.forEach(post => {
-    feed.addItem(post)
-  })
+  formattedPosts.forEach((post) => {
+    feed.addItem(post);
+  });
 
-  fs.mkdirSync('./public/rss', { recursive: true })
-  fs.writeFileSync('./public/rss/feed.xml', feed.rss2())
+  fs.mkdirSync('./public/rss', { recursive: true });
+  fs.writeFileSync('./public/rss/feed.xml', feed.rss2());
   // fs.writeFileSync('./public/rss/atom.xml', feed.atom1())
   // fs.writeFileSync('./public/rss/feed.json', feed.json1())
-}
+};
 
-export default generatedRssFeed
+export default generatedRssFeed;

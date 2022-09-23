@@ -1,25 +1,27 @@
-import React, { useCallback, useRef, useState } from 'react'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import ModalMenu from '../ModalMenu'
-import ButtonBurger from '../ButtonBurger'
-import useMount from '../../../lib/hooks/useMount'
+import React, { useCallback, useRef, useState } from 'react';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+import useMount from '../../../lib/hooks/useMount';
+import ButtonBurger from '../ButtonBurger';
+import ModalMenu from '../ModalMenu';
 
 const Header: React.VFC = () => {
-  const burgerRef = useRef<HTMLButtonElement>(null)
-  const [isMenuOpened, setIsMenuOpened] = useState(false)
-  const mounted = useMount()
+  const burgerRef = useRef<HTMLButtonElement>(null);
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const mounted = useMount();
 
   const handleBurgerClick = useCallback(() => {
-    setIsMenuOpened(prev => !prev)
-  }, [])
+    setIsMenuOpened((prev) => !prev);
+  }, []);
 
   const handleModalClose = useCallback(() => {
     // fire event after burger clicked
     setTimeout(() => {
-      setIsMenuOpened(false)
-    }, 300)
-  }, [])
+      setIsMenuOpened(false);
+    }, 300);
+  }, []);
 
   return (
     <motion.header
@@ -34,25 +36,17 @@ const Header: React.VFC = () => {
           </a>
         </Link>
         <div className="grow" />
-        <ButtonBurger
-          ref={burgerRef}
-          isOpen={isMenuOpened}
-          onClick={handleBurgerClick}
-        />
+        <ButtonBurger ref={burgerRef} isOpen={isMenuOpened} onClick={handleBurgerClick} />
       </div>
       {/**
        prevent useLayoutEffect on SSR
        @see https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
        */}
       {mounted && (
-        <ModalMenu
-          burgerRef={burgerRef}
-          isOpen={isMenuOpened}
-          onClose={handleModalClose}
-        />
+        <ModalMenu burgerRef={burgerRef} isOpen={isMenuOpened} onClose={handleModalClose} />
       )}
     </motion.header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

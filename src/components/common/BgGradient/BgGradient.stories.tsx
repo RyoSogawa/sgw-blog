@@ -1,5 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import BgGradient from './BgGradient'
+import BgGradient from './BgGradient';
+
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
   title: 'common/BgGradient',
@@ -7,13 +8,11 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof BgGradient>
+} as ComponentMeta<typeof BgGradient>;
 
-const Template: ComponentStory<typeof BgGradient> = props => (
-  <BgGradient {...props} />
-)
+const Template: ComponentStory<typeof BgGradient> = (props) => <BgGradient {...props} />;
 
-export const DefaultStyle = Template.bind({})
+export const DefaultStyle = Template.bind({});
 DefaultStyle.args = {
   bgColorClassNames: ['bg-lightGreen', 'bg-blue-800', 'bg-pink-500'],
-}
+};

@@ -1,14 +1,16 @@
-import type { NextPage } from 'next'
-import Image from 'next/image'
-import Layout from '../../components/common/Layout'
-import Heading from '../../components/ui/Heading'
-import Profile from '../../components/about/Profile'
-import Values from '../../components/about/Values'
-import Interests from '../../components/about/Interests'
-import FavoriteTools from '../../components/about/FavoriteTools'
-import WorkExperience from '../../components/about/WorkExperience'
-import ImgWithCats from '../../../public/images/with-cats.jpg'
-import Seo from '../../components/functional/Seo'
+import Image from 'next/image';
+
+import ImgWithCats from '../../../public/images/with-cats.jpg';
+import FavoriteTools from '../../components/about/FavoriteTools';
+import Interests from '../../components/about/Interests';
+import Profile from '../../components/about/Profile';
+import Values from '../../components/about/Values';
+import WorkExperience from '../../components/about/WorkExperience';
+import Layout from '../../components/common/Layout';
+import Seo from '../../components/functional/Seo';
+import Heading from '../../components/ui/Heading';
+
+import type { NextPage } from 'next';
 // import ButtonLink from '../../components/ui/ButtonLink'
 
 const PageAbout: NextPage = () => (
@@ -61,6 +63,6 @@ const PageAbout: NextPage = () => (
     {/*  </ButtonLink> */}
     {/* </div> */}
   </Layout>
-)
+);
 
-export default PageAbout
+export default PageAbout;

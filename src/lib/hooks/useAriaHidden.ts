@@ -1,5 +1,7 @@
-import { RefObject, useEffect } from 'react'
-import { hideOthers } from 'aria-hidden'
+import type { RefObject } from 'react';
+import { useEffect } from 'react';
+
+import { hideOthers } from 'aria-hidden';
 
 /**
  * @see https://zenn.dev/dqn/articles/36045bb89d5d69
@@ -7,11 +9,11 @@ import { hideOthers } from 'aria-hidden'
 function useAriaHidden(ref: RefObject<HTMLElement>, isOpen: boolean): void {
   useEffect(() => {
     if (!isOpen || ref.current === null) {
-      return
+      return;
     }
 
-    return hideOthers(ref.current)
-  }, [ref, isOpen])
+    return hideOthers(ref.current);
+  }, [ref, isOpen]);
 }
 
-export default useAriaHidden
+export default useAriaHidden;
