@@ -29,7 +29,7 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
           <br />
           サービスの提供
         </Heading>
-        <div className="mt-8 text-center prose">
+        <div className="prose mt-8 text-center">
           <div className="inline-block text-left">
             <p>人の心をより豊かにするサービスを作りたいと思っています。</p>
             <p>ポジティブな感情を増やし、幸せの総量に貢献できるようなサービス、例えば、</p>
@@ -52,7 +52,7 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
           <br />
           Webサービス開発
         </Heading>
-        <div className="mt-8 text-center prose">
+        <div className="prose mt-8 text-center">
           <div className="inline-block text-left">
             <p>
               小~中規模のWebサービス設計・開発が得意で、
@@ -90,7 +90,7 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
         <Heading as="h2" id="posts">
           Posts
         </Heading>
-        <div className="grid gap-6 mt-4 lg:mt-8">
+        <div className="mt-4 grid gap-6 lg:mt-8">
           {posts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}

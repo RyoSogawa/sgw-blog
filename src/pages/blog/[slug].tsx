@@ -46,12 +46,12 @@ const PageBlogSingle: NextPage<Props> = ({ post }) => {
         authorName="Ryo Sogawa"
         description={desc}
       />
-      <div className="container pt-32 pb-20 max-w-[732px] prose">
-        <div className="grid place-items-center mx-auto w-12 h-12 leading-none bg-white rounded-full not-prose fsz-20ptr">
+      <div className="prose container max-w-[732px] pt-32 pb-20">
+        <div className="not-prose mx-auto grid h-12 w-12 place-items-center rounded-full bg-white leading-none fsz-20ptr">
           {post.emoji}
         </div>
         <h1 className="mt-8">{post.title}</h1>
-        <div className="flex items-center not-prose">
+        <div className="not-prose flex items-center">
           {post.tags.map((tag) => (
             <TagLabel key={tag} className="mr-3">
               {tag}

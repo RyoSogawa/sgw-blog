@@ -55,7 +55,7 @@ const FavoriteTools: React.VFC<FavoriteToolsProps> = ({ className }) => (
       <Heading as="h2" id="favorite-tools">
         Favorite Tools
       </Heading>
-      <ul className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-x-2 gap-y-8 mx-auto mt-10 max-w-[710px]">
+      <ul className="mx-auto mt-10 grid max-w-[710px] grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-x-2 gap-y-8">
         {data.map((d) => (
           <li key={d.name} className="text-center">
             <img
@@ -66,7 +66,7 @@ const FavoriteTools: React.VFC<FavoriteToolsProps> = ({ className }) => (
               loading="lazy"
               className={cn('inline-block h-12', d.imgClassName)}
             />
-            <span className="block mt-4 font-mono fsz-14ptr">{d.name}</span>
+            <span className="mt-4 block font-mono fsz-14ptr">{d.name}</span>
           </li>
         ))}
       </ul>

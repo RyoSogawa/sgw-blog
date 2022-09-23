@@ -7,12 +7,12 @@ export type FvCopyProps = {
 };
 
 const FvCopy: React.VFC<FvCopyProps> = ({ className }) => (
-  <div className={cn(className, 'container grid overflow-hidden place-items-center h-screen')}>
-    <blockquote className="relative font-inter font-bold tracking-tight leading-[1.1] text-center mix-blend-difference text-[clamp(56px,10vw,110px)]">
-      <span className="block -ml-20">“Everything </span>
-      <span className="block -ml-2">in It’s </span>
-      <span className="block ml-20">Right Place”</span>
-      <span className="block absolute -bottom-12 left-0 font-extralight tracking-wider fsz-11ptr md:fsz-14ptr">
+  <div className={cn(className, 'container grid h-screen place-items-center overflow-hidden')}>
+    <blockquote className="relative text-center font-inter text-[clamp(56px,10vw,110px)] font-bold leading-[1.1] tracking-tight mix-blend-difference">
+      <span className="-ml-20 block">“Everything </span>
+      <span className="-ml-2 block">in It’s </span>
+      <span className="ml-20 block">Right Place”</span>
+      <span className="absolute -bottom-12 left-0 block font-extralight tracking-wider fsz-11ptr md:fsz-14ptr">
         - Radiohead 2000
       </span>
     </blockquote>

@@ -21,12 +21,12 @@ const ButtonLink: React.VFC<ButtonLinkProps> = ({
   const isExternal = href.startsWith('http');
   const classNames = cn(
     className,
-    'inline-block py-2 px-6 min-w-[170px] font-inter font-medium text-center rounded border fsz-16ptr',
+    'inline-block min-w-[170px] rounded border py-2 px-6 text-center font-inter font-medium fsz-16ptr',
     'transition-colors duration-200',
     theme === 'primary' &&
-      'text-white bg-blue-500 hover:bg-blue-600 border-blue-500 hover:border-blue-600',
+      'border-blue-500 bg-blue-500 text-white hover:border-blue-600 hover:bg-blue-600',
     theme === 'secondary' &&
-      'text-black hover:text-white bg-white hover:bg-transparent border-white',
+      'border-white bg-white text-black hover:bg-transparent hover:text-white',
     shadow && 'shadow',
     shadow && theme === 'primary' && 'shadow-blue-500',
   );

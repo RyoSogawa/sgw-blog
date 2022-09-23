@@ -34,10 +34,10 @@ const Interests: React.VFC<InterestsProps> = ({ className }) => (
       <Heading as="h2" id="interests">
         Interests
       </Heading>
-      <ul className="grid gap-6 justify-center mt-10 lg:grid-flow-col lg:gap-14">
+      <ul className="mt-10 grid justify-center gap-6 lg:grid-flow-col lg:gap-14">
         {data.map((d) => (
           <li key={d.icon} className="flex items-center">
-            <div className="grid shrink-0 place-items-center mr-4 w-16 h-16 rounded-full border border-white fsz-26ptr">
+            <div className="mr-4 grid h-16 w-16 shrink-0 place-items-center rounded-full border border-white fsz-26ptr">
               {d.icon}
             </div>
             <h3 className="font-inter font-bold text-white fsz-28ptr">{d.title}</h3>

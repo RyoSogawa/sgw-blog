@@ -15,7 +15,7 @@ const BgGradient: React.VFC<BgGradientProps> = ({ bgColorClassNames }) => {
   const hoveringLink = useHoveringLink();
 
   return (
-    <section className="overflow-hidden relative w-screen h-screen">
+    <section className="relative h-screen w-screen overflow-hidden">
       <div className={s.gradientWrapper} role="region">
         {bgColorClassNames.map((c, index) => (
           <div

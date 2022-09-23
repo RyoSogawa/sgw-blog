@@ -87,7 +87,7 @@ const WorkExperience: React.VFC<WorkExperienceProps> = ({ className }) => (
           <li key={d.year} className={s.timeline__item}>
             <div className={s.timeline__year}>{d.year}年〜</div>
             <div className={s.timeline__content}>
-              <div className="p-5 bg-darkBlue/60 rounded">
+              <div className="rounded bg-darkBlue/60 p-5">
                 <h3 className="-mt-0.5 font-inter font-bold text-white fsz-22ptr">{d.title}</h3>
                 <p className="mt-4">{d.desc}</p>
                 {d.works.map((work) => (
@@ -98,9 +98,9 @@ const WorkExperience: React.VFC<WorkExperienceProps> = ({ className }) => (
                         <span className="ml-2 text-text fsz-12ptr">( {work.note} )</span>
                       )}
                     </h4>
-                    <ul className="pl-5 list-disc">
+                    <ul className="list-disc pl-5">
                       {work.list.map((item) => (
-                        <li key={item} className="first-of-type:mt-2 mt-1 tracking-wider leading-7">
+                        <li key={item} className="mt-1 leading-7 tracking-wider first-of-type:mt-2">
                           {item}
                         </li>
                       ))}

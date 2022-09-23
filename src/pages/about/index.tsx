@@ -30,7 +30,7 @@ const PageAbout: NextPage = () => (
 
     <Values />
 
-    <div className="pb-10 mx-auto max-w-[650px]">
+    <div className="mx-auto max-w-[650px] pb-10">
       <Image src={ImgWithCats} alt="" placeholder="blur" />
     </div>
 
@@ -45,7 +45,7 @@ const PageAbout: NextPage = () => (
         <Heading as="h2" id="education">
           Education
         </Heading>
-        <ul className="inline-block pl-6 mt-10 tracking-wider leading-8 list-disc text-left">
+        <ul className="mt-10 inline-block list-disc pl-6 text-left leading-8 tracking-wider">
           <li>2019年 EATビジネス予備校卒業</li>
           <li>2014年 九州大学芸術工学部音響設計学科卒業</li>
         </ul>

@@ -22,20 +22,20 @@ const PostCard: React.VFC<PostCardProps> = ({ className, post, headingTag = 'h2'
       <a
         className={cn(
           className,
-          'block py-5 px-6 bg-darkBlue/60 rounded transition-[transform,box-shadow] ease-out',
-          'hover:shadow-xl hover:-translate-y-0.5',
+          'block rounded bg-darkBlue/60 py-5 px-6 transition-[transform,box-shadow] ease-out',
+          'hover:-translate-y-0.5 hover:shadow-xl',
         )}
       >
         <article>
           <div className="flex items-center">
-            <div className="grid shrink-0 place-items-center mr-3 w-9 h-9 leading-none bg-white rounded-full fsz-13ptr">
+            <div className="mr-3 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white leading-none fsz-13ptr">
               {emoji}
             </div>
             <div className="">
               <time dateTime={publishedAt} className="block font-inter text-white fsz-10ptr">
                 {formattedPublishedAt}
               </time>
-              <div className="grid grid-flow-col gap-2 mt-1">
+              <div className="mt-1 grid grid-flow-col gap-2">
                 {tags.map((tag) => (
                   <TagLabel key={tag}>{tag}</TagLabel>
                 ))}

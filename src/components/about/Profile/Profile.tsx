@@ -10,7 +10,7 @@ export type ProfileProps = {
 
 const Profile: React.VFC<ProfileProps> = ({ className }) => (
   <div
-    className={cn(className, 'grid gap-6 mx-auto mt-8 max-w-[650px] lg:grid-flow-col lg:gap-12')}
+    className={cn(className, 'mx-auto mt-8 grid max-w-[650px] gap-6 lg:grid-flow-col lg:gap-12')}
   >
     <Author className="shrink-0" imageType="photo" />
     <div className="prose">

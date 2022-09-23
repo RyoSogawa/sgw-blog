@@ -31,13 +31,13 @@ const AuthorLinks: React.VFC<AuthorLinksProps> = ({ className }) => (
     {links.map((link) => (
       <a
         key={link.name}
-        className="w-6 h-6"
+        className="h-6 w-6"
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
       >
         <img
-          className="w-full h-full"
+          className="h-full w-full"
           src={link.src}
           alt={link.name}
           width={24}

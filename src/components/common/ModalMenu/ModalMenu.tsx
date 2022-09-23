@@ -104,7 +104,7 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({ isOpen, burgerRef, onClose }) =>
   return (
     <motion.div
       ref={ref}
-      className="absolute top-0 left-0 w-screen h-screen text-center bg-black pointer-events-auto"
+      className="pointer-events-auto absolute top-0 left-0 h-screen w-screen bg-black text-center"
       variants={modal}
       role="dialog"
       aria-labelledby="global menu"
@@ -112,7 +112,7 @@ const ModalMenu: React.VFC<ModalMenuProps> = ({ isOpen, burgerRef, onClose }) =>
       aria-modal
     >
       <nav className="mt-24">
-        <motion.ul className="grid grid-flow-row gap-5 justify-center" variants={modalMenus}>
+        <motion.ul className="grid grid-flow-row justify-center gap-5" variants={modalMenus}>
           {MENU.map((menu) => (
             <motion.li key={menu.label} variants={modalMenuItems}>
               <Link href={menu.path}>

@@ -36,7 +36,7 @@ const PageBlog: NextPage<Props> = ({ posts }) => {
       <section className="pt-32 pb-20">
         <div className="container">
           <Heading as="h1">Blog</Heading>
-          <div className="grid gap-6 mt-20 lg:mt-8">
+          <div className="mt-20 grid gap-6 lg:mt-8">
             {displayingPosts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}

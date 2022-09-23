@@ -17,7 +17,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo {...SEO} />
       <NextGtag trackingId="G-5JCXM1ZQB2" />
-      <div className="fixed top-0 left-0 z-hide w-screen h-screen">
+      <div className="fixed top-0 left-0 z-hide h-screen w-screen">
         <BgGradient bgColorClassNames={['bg-lightGreen', 'bg-yellow-600', 'bg-pink-500']} />
       </div>
       <Component {...pageProps} />

@@ -14,9 +14,9 @@ const Values: React.VFC<ValuesProps> = ({ className }) => (
       <Heading as="h2" id="values">
         Values
       </Heading>
-      <ul className="grid gap-12 mt-14 lg:grid-flow-col">
+      <ul className="mt-14 grid gap-12 lg:grid-flow-col">
         <li>
-          <Heading as="h3" size="h5" className="grid place-items-center h-20">
+          <Heading as="h3" size="h5" className="grid h-20 place-items-center">
             身近な人から
             <br />
             幸せにする
@@ -27,7 +27,7 @@ const Values: React.VFC<ValuesProps> = ({ className }) => (
               そしてなるべく、自分自身→パートナー→親族→友人→仕事のチーム→取引先...
               といったように身近な人から順番に大事にしたいと思っています。
             </p>
-            <ul className="pl-5 mt-4 leading-8 list-disc">
+            <ul className="mt-4 list-disc pl-5 leading-8">
               <li>自分を犠牲にしない</li>
               <li>外にも親切に、身内にはもっと親切に</li>
               <li>よりよい制作物のために、仲間に無理をさせない</li>
@@ -35,7 +35,7 @@ const Values: React.VFC<ValuesProps> = ({ className }) => (
           </div>
         </li>
         <li>
-          <Heading as="h3" size="h5" className="grid place-items-center h-20">
+          <Heading as="h3" size="h5" className="grid h-20 place-items-center">
             ポジティブの勝利
           </Heading>
           <div className="mt-7">
@@ -49,14 +49,14 @@ const Values: React.VFC<ValuesProps> = ({ className }) => (
           </div>
         </li>
         <li>
-          <Heading as="h3" size="h5" className="grid place-items-center h-20">
+          <Heading as="h3" size="h5" className="grid h-20 place-items-center">
             合理的であれ
           </Heading>
           <div className="mt-7">
             <p>理にかなった判断を大事にし、Win-Winの関係を作ることにフォーカスしています。</p>
             <p className="mt-4">
               そのためにも、
-              <ul className="pl-5 mt-4 leading-8 list-disc">
+              <ul className="mt-4 list-disc pl-5 leading-8">
                 <li>フラット…相手によって対応を変えない</li>
                 <li>ドライ…主観よりも事実を</li>
                 <li>ゼロベース…常識に囚われない</li>
