@@ -43,3 +43,6 @@ yarn-error.log*
 
 #RSS
 public/rss
+
+# generated data
+/.contents
