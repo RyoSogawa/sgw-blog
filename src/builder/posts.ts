@@ -16,10 +16,8 @@ type FeedItem = {
   dateMiliSeconds: number;
 };
 
-const parser = new Parser();
-let allPostItems: PostItem[] = [];
-
-async function fetchFeedItems(url: string) {
+const fetchFeedItems = async (url: string) => {
+  const parser = new Parser();
   const feed = await parser.parseURL(url);
   if (!feed?.items?.length) return [];
 
@@ -35,9 +33,9 @@ async function fetchFeedItems(url: string) {
       };
     })
     .filter(({ title, link }) => title && link) as FeedItem[];
-}
+};
 
-async function getFeedItemsFromSources(sources: undefined | string[]) {
+const getFeedItemsFromSources = async (sources: undefined | string[]) => {
   if (!sources?.length) return [];
   let feedItems: FeedItem[] = [];
   for (const url of sources) {
@@ -45,9 +43,9 @@ async function getFeedItemsFromSources(sources: undefined | string[]) {
     if (items) feedItems = [...feedItems, ...items];
   }
   return feedItems;
-}
+};
 
-async function getFeedItems(): Promise<PostItem[]> {
+const getFeedItems = async (): Promise<PostItem[]> => {
   const feedItems = await getFeedItemsFromSources(SOURCES);
   if (!feedItems) return [];
 
@@ -59,12 +57,11 @@ async function getFeedItems(): Promise<PostItem[]> {
   }
 
   return feedItems;
-}
+};
 
-(async function () {
+export const createPostsFile = async () => {
   const items = await getFeedItems();
-  if (items) allPostItems = [...allPostItems, ...items];
-  allPostItems.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
+  items.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
   fs.ensureDirSync('.contents');
-  fs.writeJsonSync('.contents/posts.json', allPostItems);
-})();
+  fs.writeJsonSync('.contents/posts.json', items);
+};

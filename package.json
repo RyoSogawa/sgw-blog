@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next",
     "build": "run-s build:posts build:next",
-    "build:posts": "ts-node --project tsconfig.builder.json ./src/builder/posts.ts",
+    "build:posts": "ts-node --project tsconfig.builder.json ./src/builder/index.ts",
     "build:next": "next build",
     "start": "next start",
     "prettier": "prettier \"src/**/*.(js|ts|jsx|tsx|css)\"",
