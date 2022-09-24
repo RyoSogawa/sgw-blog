@@ -5,8 +5,6 @@ import PostCard from '../components/post/PostCard';
 import FvCopy from '../components/top/FvCopy';
 import ButtonLink from '../components/ui/ButtonLink';
 import Heading from '../components/ui/Heading';
-import { getAllPosts } from '../lib/api';
-import generatedRssFeed from '../lib/feed';
 
 import type Post from '../types/post';
 import type { NextPage } from 'next';
@@ -114,15 +112,3 @@ const PageIndex: NextPage<Props> = ({ posts }) => (
 );
 
 export default PageIndex;
-
-export const getStaticProps = async () => {
-  const allPosts = getAllPosts(['title', 'slug', 'tags', 'emoji', 'publishedAt']);
-
-  const recentPosts = allPosts.slice(0, 3);
-
-  if (process.env.NODE_ENV !== 'development') await generatedRssFeed();
-
-  return {
-    props: { posts: recentPosts },
-  };
-};
