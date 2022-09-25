@@ -5,7 +5,6 @@ import fs from 'fs';
 
 import { Feed } from 'feed';
 
-import postsJson from '../../.contents/posts.json';
 import { SITE_URL, SITE_NAME, SITE_DESC } from '../../next-seo.config';
 import { AUTHOR } from './config';
 
@@ -32,7 +31,7 @@ export const generatedRssFeed = async () => {
     author: AUTHOR,
   });
 
-  const posts = postsJson as unknown as PostItem[];
+  const posts = (await fs.readFileSync('./.contents/posts.json')) as unknown as PostItem[];
 
   const formattedPosts = await Promise.all(
     posts.map(async (post) => {
