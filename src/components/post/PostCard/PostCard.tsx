@@ -2,8 +2,8 @@ import React from 'react';
 
 import cn from 'classnames';
 
-import { convertToDistance } from '../../../lib/datetime';
-import { getFaviconSrcFromOrigin } from '../../../lib/utils';
+import { convertToDistance } from '../../../utils/datetime';
+import { getFaviconSrcFromOrigin } from '../../../utils/helpers';
 
 import type { PostItem } from '../../../types/global';
 
