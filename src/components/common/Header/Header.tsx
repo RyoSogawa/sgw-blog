@@ -3,7 +3,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-import useMount from '../../../lib/hooks/useMount';
+import useMount from '../../../hooks/useMount';
 import ButtonBurger from '../ButtonBurger';
 import ModalMenu from '../ModalMenu';
 

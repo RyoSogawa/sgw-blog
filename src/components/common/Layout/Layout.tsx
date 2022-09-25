@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useHoveringLink from '../../../lib/hooks/useHoveringLink';
+import useHoveringLink from '../../../hooks/useHoveringLink';
 import Footer from '../Footer';
 import Header from '../Header';
 

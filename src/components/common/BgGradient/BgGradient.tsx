@@ -2,8 +2,8 @@ import React from 'react';
 
 import cn from 'classnames';
 
-import useHoveringLink from '../../../lib/hooks/useHoveringLink';
-import useScrollPosition from '../../../lib/hooks/useScrollPosition';
+import useHoveringLink from '../../../hooks/useHoveringLink';
+import useScrollPosition from '../../../hooks/useScrollPosition';
 import s from './BgGradient.module.css';
 
 export type BgGradientProps = {

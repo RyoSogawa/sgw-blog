@@ -3,9 +3,9 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
+import useAriaHidden from '../../../hooks/useAriaHidden';
+import useFocusTrap from '../../../hooks/useFocusTrap';
 import { FORM_URL, MENU } from '../../../lib/constants';
-import useAriaHidden from '../../../lib/hooks/useAriaHidden';
-import useFocusTrap from '../../../lib/hooks/useFocusTrap';
 import AuthorLinks from '../../author/AuthorLinks';
 import ButtonLink from '../../ui/ButtonLink';
 
