@@ -1,30 +1,22 @@
 import { useCallback, useMemo, useState } from 'react';
 
+import posts from '../../../.contents/posts.json';
 import Layout from '../../components/common/Layout';
 import Seo from '../../components/functional/Seo';
 import PostCard from '../../components/post/PostCard';
 import Button from '../../components/ui/Button';
 import Heading from '../../components/ui/Heading';
-import { getAllPosts } from '../../lib/api';
 
-import type Post from '../../types/post';
 import type { NextPage } from 'next';
 
-type Props = {
-  posts: Post[];
-};
+const POST_PER_PAGE = 15;
 
-const POST_PER_PAGE = 5;
-
-const PageBlog: NextPage<Props> = ({ posts }) => {
+const PageBlog: NextPage = () => {
   const [displayItemsCount, setDisplayItemsCount] = useState(POST_PER_PAGE);
   const totalItemsCount = posts?.length || 0;
   const canLoadMore = totalItemsCount - displayItemsCount > 0;
 
-  const displayingPosts = useMemo(
-    () => posts.slice(0, displayItemsCount),
-    [posts, displayItemsCount],
-  );
+  const displayingPosts = useMemo(() => posts.slice(0, displayItemsCount), [displayItemsCount]);
 
   const loadMore = useCallback(() => {
     setDisplayItemsCount((prev) => prev + POST_PER_PAGE);
@@ -38,7 +30,7 @@ const PageBlog: NextPage<Props> = ({ posts }) => {
           <Heading as="h1">Blog</Heading>
           <div className="mt-20 grid gap-6 lg:mt-8">
             {displayingPosts.map((post) => (
-              <PostCard key={post.slug} post={post} />
+              <PostCard key={post.link} post={post} />
             ))}
           </div>
         </div>
@@ -55,11 +47,3 @@ const PageBlog: NextPage<Props> = ({ posts }) => {
 };
 
 export default PageBlog;
-
-export const getStaticProps = async () => {
-  const allPosts = getAllPosts(['title', 'slug', 'tags', 'emoji', 'publishedAt']);
-
-  return {
-    props: { posts: allPosts },
-  };
-};
