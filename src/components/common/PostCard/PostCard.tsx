@@ -37,6 +37,7 @@ const PostCard: React.VFC<PostCardProps> = ({ className, post, headingTag = 'h2'
               width={14}
               height={14}
               className="h-[14px] w-[14px]"
+              loading="lazy"
               alt={hostname}
             />
             <span className="font-inter fsz-14ptr">{hostname}</span>
