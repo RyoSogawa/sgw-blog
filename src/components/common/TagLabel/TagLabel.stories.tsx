@@ -3,7 +3,7 @@ import TagLabel from './TagLabel';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: 'post/TagLabel',
+  title: 'common/TagLabel',
   component: TagLabel,
 } as ComponentMeta<typeof TagLabel>;
 

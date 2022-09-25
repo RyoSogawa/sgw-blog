@@ -3,7 +3,7 @@ import AuthorLinks from './AuthorLinks';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: 'author/AuthorLinks',
+  title: 'common/AuthorLinks',
   component: AuthorLinks,
 } as ComponentMeta<typeof AuthorLinks>;
 

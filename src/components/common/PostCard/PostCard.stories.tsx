@@ -4,7 +4,7 @@ import type { PostCardProps } from './PostCard';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: 'post/PostCard',
+  title: 'common/PostCard',
   component: PostCard,
   argTypes: { onClick: { action: 'onClick' } },
 } as ComponentMeta<typeof PostCard>;

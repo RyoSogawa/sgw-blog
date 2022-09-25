@@ -2,8 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 
 import posts from '../../../.contents/posts.json';
 import Layout from '../../components/common/Layout';
+import PostCard from '../../components/common/PostCard';
 import Seo from '../../components/functional/Seo';
-import PostCard from '../../components/post/PostCard';
 import Button from '../../components/ui/Button';
 import Heading from '../../components/ui/Heading';
 

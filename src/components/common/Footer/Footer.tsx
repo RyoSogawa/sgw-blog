@@ -3,9 +3,9 @@ import React from 'react';
 import Link from 'next/link';
 
 import { FORM_URL, MENU } from '../../../constants';
-import Author from '../../author/Author';
-import AuthorLinks from '../../author/AuthorLinks';
 import ButtonLink from '../../ui/ButtonLink';
+import Author from '../Author';
+import AuthorLinks from '../AuthorLinks';
 
 const Footer: React.VFC = () => (
   <footer className="mt-10 border-t border-lavender bg-black">

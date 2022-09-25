@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { FORM_URL, MENU } from '../../../constants';
 import useAriaHidden from '../../../hooks/useAriaHidden';
 import useFocusTrap from '../../../hooks/useFocusTrap';
-import AuthorLinks from '../../author/AuthorLinks';
 import ButtonLink from '../../ui/ButtonLink';
+import AuthorLinks from '../AuthorLinks';
 
 import type { Variants } from 'framer-motion';
 

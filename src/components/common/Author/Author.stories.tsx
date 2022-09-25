@@ -3,7 +3,7 @@ import Author from './Author';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: 'author/Author',
+  title: 'common/Author',
   component: Author,
 } as ComponentMeta<typeof Author>;
 
