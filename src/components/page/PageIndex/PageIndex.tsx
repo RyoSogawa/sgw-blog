@@ -1,9 +1,9 @@
 import React from 'react';
 
 import posts from '../../../../.contents/posts.json';
-import Profile from '../../about/Profile';
 import Layout from '../../common/Layout';
 import PostCard from '../../common/PostCard';
+import Profile from '../../common/Profile';
 import Seo from '../../functional/Seo';
 import ButtonLink from '../../ui/ButtonLink';
 import Heading from '../../ui/Heading';

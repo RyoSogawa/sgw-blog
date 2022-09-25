@@ -2,7 +2,7 @@ import React from 'react';
 
 import cn from 'classnames';
 
-import Author from '../../common/Author';
+import Author from '../Author';
 
 export type ProfileProps = {
   className?: string;

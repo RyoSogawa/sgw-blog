@@ -2,7 +2,7 @@ import React from 'react';
 
 import cn from 'classnames';
 
-import Heading from '../../ui/Heading';
+import Heading from '../../../ui/Heading';
 
 export type InterestsProps = {
   className?: string;
