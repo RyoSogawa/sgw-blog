@@ -42,7 +42,7 @@ const PostCard: React.VFC<PostCardProps> = ({ className, post, headingTag = 'h2'
             />
             <span className="font-inter fsz-14ptr">{hostname}</span>
           </div>
-          <time dateTime={isoDate} className="block font-inter text-white fsz-11ptr">
+          <time dateTime={isoDate} className="block font-inter text-white fsz-12ptr">
             {formattedPublishedAt}
           </time>
         </div>
