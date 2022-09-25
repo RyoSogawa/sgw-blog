@@ -9,7 +9,7 @@ import postsJson from '../../.contents/posts.json';
 import { SITE_URL, SITE_NAME, SITE_DESC } from '../../next-seo.config';
 import { AUTHOR } from './config';
 
-import type { PostItem } from '../types/global';
+import type { PostItem } from '../type';
 
 export const generatedRssFeed = async () => {
   const baseUrl = SITE_URL;

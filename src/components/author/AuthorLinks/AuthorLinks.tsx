@@ -2,7 +2,7 @@ import React from 'react';
 
 import cn from 'classnames';
 
-import { LINKS } from '../../../lib/constants';
+import { LINKS } from '../../../constants';
 
 const links = [
   {

@@ -7,7 +7,7 @@ import FvCopy from '../components/top/FvCopy';
 import ButtonLink from '../components/ui/ButtonLink';
 import Heading from '../components/ui/Heading';
 
-import type { PostItem } from '../types/global';
+import type { PostItem } from '../type';
 import type { NextPage } from 'next';
 
 const PageIndex: NextPage = () => {

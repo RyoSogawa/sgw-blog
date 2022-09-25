@@ -5,7 +5,7 @@ import cn from 'classnames';
 import { convertToDistance } from '../../../utils/datetime';
 import { getFaviconSrcFromOrigin } from '../../../utils/helpers';
 
-import type { PostItem } from '../../../types/global';
+import type { PostItem } from '../../../type';
 
 export type PostCardProps = {
   className?: string;

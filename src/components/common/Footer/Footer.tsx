@@ -2,7 +2,7 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import { FORM_URL, MENU } from '../../../lib/constants';
+import { FORM_URL, MENU } from '../../../constants';
 import Author from '../../author/Author';
 import AuthorLinks from '../../author/AuthorLinks';
 import ButtonLink from '../../ui/ButtonLink';

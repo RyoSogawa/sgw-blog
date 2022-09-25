@@ -6,7 +6,7 @@ import Parser from 'rss-parser';
 
 import { EXCLUDE_URL_REGEX, SOURCES } from './config';
 
-import type { PostItem } from '../types/global';
+import type { PostItem } from '../type';
 
 type FeedItem = {
   title: string;
