@@ -86,8 +86,8 @@ const PageIndex: React.VFC = () => {
       </section>
       <section className="section">
         <div className="container">
-          <Heading as="h2" id="posts">
-            Posts
+          <Heading as="h2" id="blog">
+            Blog
           </Heading>
           <div className="mt-4 grid gap-6 lg:mt-8">
             {recentPosts.map((post) => (
