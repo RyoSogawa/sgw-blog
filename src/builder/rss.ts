@@ -31,20 +31,17 @@ export const generatedRssFeed = async () => {
     author: AUTHOR,
   });
 
-  const posts = (await fs.readFileSync('./.contents/posts.json')) as unknown as PostItem[];
+  const postsBuffer = fs.readFileSync('./.contents/posts.json');
+  const posts = JSON.parse(postsBuffer.toString()) as PostItem[];
 
-  const formattedPosts = await Promise.all(
-    posts.map(async (post) => {
-      return {
-        title: post.title,
-        description: post.contentSnippet,
-        id: post.link,
-        link: post.link,
-        content: post.contentSnippet,
-        date: new Date(post.dateMiliSeconds),
-      };
-    }),
-  );
+  const formattedPosts = posts.map((post) => ({
+    title: post.title,
+    description: post.contentSnippet,
+    id: post.link,
+    link: post.link,
+    content: post.contentSnippet,
+    date: new Date(post.dateMiliSeconds),
+  }));
 
   formattedPosts.forEach((post) => {
     feed.addItem(post);
