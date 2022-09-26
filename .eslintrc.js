@@ -25,7 +25,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
   },
-  ignorePatterns: ['.eslintrc.*', 'next.config.js', '.storybook/**', 'theme/**'],
+  ignorePatterns: ['.eslintrc.*', '*.config.js', '.storybook/**', 'theme/**'],
   rules: {
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
