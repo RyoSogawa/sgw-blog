@@ -90,11 +90,14 @@ const getManualPosts = async (): Promise<PostItem[]> => {
         .filter(Boolean) as { name: string; content: string }[];
 
       const title = ogMetas.find((meta) => meta.name === 'title')?.content || '';
+      const splitTitle = title.split('｜');
+      const titleWithoutSiteName =
+        splitTitle.length > 1 ? splitTitle.slice(0, -1).join('｜') : splitTitle[0];
       const description = ogMetas.find((meta) => meta.name === 'description')?.content;
       const date = ogMetas.find((meta) => meta.name === 'published_time')?.content;
 
       return {
-        title,
+        title: titleWithoutSiteName,
         contentSnippet: description,
         link: url,
         isoDate: date,
