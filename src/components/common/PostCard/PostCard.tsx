@@ -14,7 +14,7 @@ export type PostCardProps = {
 };
 
 const PostCard: React.VFC<PostCardProps> = ({ className, post, headingTag = 'h2' }) => {
-  const { isoDate, link, title } = post;
+  const { isoDate, link, title, contentSnippet } = post;
   const formattedPublishedAt = isoDate ? convertToDistance(isoDate) : 'unknown';
   const { hostname, origin } = new URL(link);
 
@@ -51,6 +51,7 @@ const PostCard: React.VFC<PostCardProps> = ({ className, post, headingTag = 'h2'
         ) : (
           <h3 className="mt-5 text-white fsz-18ptr">{title}</h3>
         )}
+        <p className="mt-2 line-clamp-2 fsz-13ptr">{contentSnippet}</p>
       </article>
     </a>
   );
