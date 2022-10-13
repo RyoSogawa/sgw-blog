@@ -2,9 +2,11 @@
  * @see https://github.com/catnose99/team-blog-hub/blob/main/src/builder/posts.ts
  */
 import fs from 'fs-extra';
+import { JSDOM } from 'jsdom';
+import fetch from 'node-fetch';
 import Parser from 'rss-parser';
 
-import { EXCLUDE_URL_REGEX, SOURCES } from './config';
+import { EXCLUDE_URL_REGEX, MANUAL_POST_URLS, SOURCES } from './config';
 
 import type { PostItem } from '../type';
 
@@ -59,9 +61,55 @@ const getFeedItems = async (): Promise<PostItem[]> => {
   return feedItems;
 };
 
+const getManualPosts = async (): Promise<PostItem[]> => {
+  return Promise.all(
+    MANUAL_POST_URLS.map(async (url) => {
+      const res = await fetch(url);
+      const html = await res.text();
+      const jsdom = new JSDOM();
+      const parser = new jsdom.window.DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const headElements = doc.head.children;
+      const ogMetas = Array.from(headElements)
+        .map((element) => {
+          const property = element.attributes.getNamedItem('property')?.value;
+          if (property?.startsWith('og:')) {
+            return {
+              name: property.replace('og:', ''),
+              content: (element as HTMLMetaElement).content,
+            };
+          }
+          if (property?.startsWith('article:')) {
+            return {
+              name: property.replace('article:', ''),
+              content: (element as HTMLMetaElement).content,
+            };
+          }
+          return null;
+        })
+        .filter(Boolean) as { name: string; content: string }[];
+
+      const title = ogMetas.find((meta) => meta.name === 'title')?.content || '';
+      const description = ogMetas.find((meta) => meta.name === 'description')?.content;
+      const date = ogMetas.find((meta) => meta.name === 'published_time')?.content;
+
+      return {
+        title,
+        contentSnippet: description,
+        link: url,
+        isoDate: date,
+        dateMiliSeconds: date ? new Date(date).getTime() : 0,
+      };
+    }),
+  );
+};
+
 export const createPostsFile = async () => {
-  const items = await getFeedItems();
-  items.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
+  const feedItems = await getFeedItems();
+  const manualPostItems = await getManualPosts();
+  const allItems = [...feedItems, ...manualPostItems].sort(
+    (a, b) => b.dateMiliSeconds - a.dateMiliSeconds,
+  );
   fs.ensureDirSync('.contents');
-  fs.writeJsonSync('.contents/posts.json', items);
+  fs.writeJsonSync('.contents/posts.json', allItems);
 };
