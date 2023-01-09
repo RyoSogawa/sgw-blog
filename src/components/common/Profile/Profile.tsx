@@ -14,7 +14,7 @@ const Profile: React.VFC<ProfileProps> = ({ className }) => (
   >
     <Author className="shrink-0" imageType="photo" />
     <div className="prose">
-      <p>香川県出身福岡県在住の 33 歳 1 児の父。</p>
+      <p>香川県出身福岡県在住の 34 歳 1 児の父。</p>
       <p>2014年にエンジニアとしてのキャリアを開始し、2016年からはフリーランスに転向。</p>
       <p className="mt-4">
         React
